@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible musical instruments and interfaces</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 900px;
+            padding: 2em;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #333;
+            line-height: 1.2;
+        }
+
+        h1 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 2.5em;
+        }
+
+        h3 {
+            margin-top: 2em;
+            border-bottom: none;
+        }
+
+        h4 {
+            margin-top: 1.5em;
+        }
+
+        a {
+            color: #005a9c;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img,
+        iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5em auto;
+            border: 1px solid #ddd;
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        .container {
+            padding: 1em;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .menu>ul>li {
+            display: inline-block;
+            margin-right: 15px;
+            vertical-align: top;
+        }
+
+        .menu ul ul li {
+            display: block;
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #eee;
+            margin: 2em 0;
+        }
+
+        p,
+        ul,
+        li {
+            color: #444;
+        }
+
+        #publications li {
+            margin-bottom: 1em;
+        }
+
+        cite {
+            display: block;
+            text-align: center;
+            font-style: italic;
+            color: #777;
+            margin-top: -1em;
+            margin-bottom: 1.5em;
+        }
+
+        .indented-section {
+            padding-left: 20px;
+            margin-top: 30px;
+            padding-bottom: 1px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Accessible musical instruments and interfaces</h1>
+        <nav class="menu">
+            <strong>Go to:</strong>
+            <ul>
+                <li><a href="#project-description">Project Description</a></li>
+                <li><a href="#instruments">Musical Instruments</a>
+                    <ul style="padding-left: 20px; margin-top: 5px;">
+                        <li><a href="#netytar">Netytar</a></li>
+                        <li><a href="#netychords">Netychords</a></li>
+                        <li><a href="#resin">Resin</a></li>
+                        <li><a href="#kiroll">Kiroll</a></li>
+                        <li><a href="#djeye">DJeye</a></li>
+                    </ul>
+                </li>
+                <li><a href="#nith-framework">The NITH Framework</a>
+                    <ul style="padding-left: 20px; margin-top: 5px;">
+                        <li><a href="#nithsensors">NITHsensors (Hardware)</a></li>
+                        <li><a href="#nithsoftware">NITHwrappers & Libraries</a></li>
+                    </ul>
+                </li>
+                <li><a href="#publications">Publications</a></li>
+            </ul>
+        </nav>
+
+        <hr>
+
+        <section id="project-description">
+            <h2>Project Description</h2>
+            <p>This project explores the design, development, and evaluation of <strong>Accessible Digital Musical
+                    Instruments (ADMIs)</strong> for users with severe motor impairments, such as quadriplegia. The
+                primary goal is to empower individuals who cannot use traditional instruments by creating expressive and
+                engaging musical tools that are controlled through alternative physical interaction channels, including
+                eye gaze, head movement, breath, and facial gestures.</p>
+            <p>Our research has produced a variety of novel instruments, from the gaze-controlled guitar
+                <strong>Netytar</strong> to the accessible DJing software <strong>DJeye</strong>. At the core of this
+                work is the <strong>NITH Framework</strong>, an open-source ecosystem of hardware and software we
+                developed to drastically simplify and accelerate the creation of new accessible applications. By
+                focusing on low-cost, DIY hardware and modular, reusable software, the NITH framework provides a
+                foundation for rapid prototyping and deep customization, enabling the creation of systems tailored to
+                the unique needs and abilities of each user.</p>
+            <p>Through case studies and user evaluations, we aim to refine our design principles and contribute to a
+                future where musical expression is accessible to everyone, regardless of physical ability.</p>
+        </section>
+
+        <hr>
+
+        <section id="instruments">
+            <h2>Musical Instruments and Interfaces</h2>
+
+            <div id="netytar" class="indented-section">
+                <h3>Netytar</h3>
+                <p>Netytar is a gaze-controlled digital instrument designed for individuals with severe motor
+                    disabilities. It allows users to play melodies and chords using only their eye movements, offering a
+                    high degree of expressiveness.</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/watch?v=Rs9K6Yn46fU&pp=0gcJCdgAo7VqN5tD0"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <h4>How it Works</h4>
+                <p>The interface features an isomorphic note layout where musical intervals correspond to consistent
+                    geometric shapes on the screen. While not a direct replica of a guitar fretboard, it is based on
+                    similar principles of spatial relationships between notes. The user selects notes by looking at
+                    specific points within this layout, and the gaze input is captured by an eye-tracker. Strumming is
+                    performed through various mechanisms, such as head rotation, blinking, or using a physical switch,
+                    depending on the user's abilities.</p>
+                <h4>Features</h4>
+                <ul>
+                    <li><strong>Isomorphic, Gaze-based Note Selection:</strong> Intuitive note selection where musical
+                        patterns are visually consistent.</li>
+                    <li><strong>Expressive Control:</strong> Allows for techniques like hammer-ons, pull-offs, and
+                        slides.</li>
+                    <li><strong>Customizable Interface:</strong> The note layout and strumming mechanism can be adapted
+                        to the user's needs.</li>
+                </ul>
+                <p><strong>Links:</strong></p>
+                <ul>
+                    <li><a href="https://github.com/Neeqstock/Netytar-amd" target="_blank">GitHub Repository</a></li>
+                </ul>
+            </div>
+
+            <div id="netychords" class="indented-section">
+                <h3>Netychords</h3>
+                <p>Netychords is an accessible digital musical instrument that enables users to play chords and melodies
+                    using gaze control and other interaction channels. It is designed to be highly customizable to suit
+                    the abilities of each user.</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/watch?v=Rs9K6Yn46fU&pp=0gcJCdgAo7VqN5tD1"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <h4>How it Works</h4>
+                <p>The user selects chords by looking at keys on the screen. The strumming or playing of the chord can
+                    be triggered by head rotation, blinks, or mouth movements, captured via the NITH framework's sensors
+                    and wrappers. The instrument supports various mappings to provide expressive control over the music.
+                </p>
+                <h4>Features</h4>
+                <ul>
+                    <li><strong>Multi-modal Input:</strong> Combines gaze with head, blink, or mouth control.</li>
+                    <li><strong>Customizable Chord Sets:</strong> Users can create and save their own chord
+                        progressions.</li>
+                    <li><strong>Visual Feedback:</strong> The interface provides clear visual cues for chord selection
+                        and playback.</li>
+                </ul>
+                <p><strong>Links:</strong></p>
+                <ul>
+                    <li><a href="https://github.com/L-I-M/Netychords-amd" target="_blank">GitHub Repository</a></li>
+                </ul>
+            </div>
+
+            <div id="resin" class="indented-section">
+                <h3>Resin</h3>
+                <p>Resin (REal-time Synth) is a modular synthesizer controlled by head movements, designed for users
+                    with motor disabilities. It allows for the creation of complex and evolving soundscapes through
+                    intuitive head motions.</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/watch?v=Rs9K6Yn46fU&pp=0gcJCdgAo7VqN5tD2"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <h4>How it Works</h4>
+                <p>The user wears a head-mounted inertial measurement unit (IMU) like the NITHheadTracker. The yaw,
+                    pitch, and roll of the head are mapped to various synthesis parameters, such as filter cutoff,
+                    resonance, and oscillator frequency. This direct mapping allows for real-time, expressive control
+                    over the sound.</p>
+                <h4>Features</h4>
+                <ul>
+                    <li><strong>Head-Controlled Synthesis:</strong> Direct and intuitive mapping of head movements to
+                        sound parameters.</li>
+                    <li><strong>Modular Design:</strong> The synthesis engine is modular, allowing users to create their
+                        own custom synth patches.</li>
+                    <li><strong>Low-Cost and Accessible:</strong> Built using affordable hardware and open-source
+                        software.</li>
+                </ul>
+                <p><strong>Links:</strong></p>
+                <ul>
+                    <li><a href="https://github.com/Neeqstock/Resin" target="_blank">GitHub Repository</a></li>
+                </ul>
+            </div>
+
+            <div id="kiroll" class="indented-section">
+                <h3>Kiroll</h3>
+                <p>Kiroll is a software application designed to emulate a MIDI keyboard using head rotation. It allows
+                    users to play notes and chords on any standard digital audio workstation (DAW) or virtual instrument
+                    without using their hands.</p>
+                <h4>How it Works</h4>
+                <p>Kiroll uses a head tracker (like the NITHheadTracker) to capture head movements. The roll axis of the
+                    head is mapped to the keys of a virtual piano keyboard. Rolling the head left or right selects
+                    different notes, and a separate mechanism (like a switch or a blink) is used to trigger the
+                    note-on/note-off events.</p>
+                <h4>Features</h4>
+                <ul>
+                    <li><strong>Head-based Keyboard Emulation:</strong> Control a virtual MIDI keyboard with head
+                        movements.</li>
+                    <li><strong>DAW Integration:</strong> Works with any software that accepts MIDI input.</li>
+                    <li><strong>Customizable Mapping:</strong> The sensitivity and range of the head-to-key mapping can
+                        be adjusted.</li>
+                </ul>
+                <p><strong>Links:</strong></p>
+                <ul>
+                    <li><a href="https://github.com/Neeqstock/Kiroll" target="_blank">GitHub Repository</a></li>
+                </ul>
+            </div>
+
+            <div id="djeye" class="indented-section">
+                <h3>DJeye</h3>
+                <p>DJeye is an innovative, accessible musical interface designed for DJing, addressing the challenge
+                    that this activity poses for individuals with limited motor capabilities like quadriplegia. The
+                    system is a software-based musical interface controlled by eye tracking, which allows for typical DJ
+                    mixing operations.</p>
+                <img src="https://i.imgur.com/KqW42gM.png" alt="DJeye Interface Screenshot">
+                <cite>The DJeye Interface, showing the two decks and central controls.</cite>
+                <iframe width="560" height="315" src="https://youtu.be/-bs080hdr7w" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <h4>How it Works</h4>
+                <p>DJeye functions as a MIDI controller that sends commands to an underlying, free open-source DJing
+                    software called MIXXX. The user interacts with the DJeye interface using only gaze pointing and
+                    winking (blinking one eye). The system consists of two main software components: an <strong>Eye
+                        Interaction Layer</strong>, which translates raw data from an eye tracker (e.g., a Tobii device)
+                    into mouse events, and a <strong>DJ Interface Layer</strong>, which provides the graphical
+                    controller. A left wink triggers a click, while closing and holding the right eye allows the user to
+                    "drag" sliders up or down by moving their gaze.</p>
+                <h4>Features</h4>
+                <ul>
+                    <li><strong>Gaze-Based Control:</strong> The entire interface is controlled via eye movements and
+                        winks.</li>
+                    <li><strong>Essential DJ Functions:</strong> Allows for crossfading, volume control, high/low-pass
+                        filtering, looping, track seeking, and pre-listening on headphones.</li>
+                    <li><strong>Radial Interface Design:</strong> The controls for each deck are arranged in a circular,
+                        pie-shaped layout around a central play/pause button, inspired by interfaces like The EyeHarp.
+                        This design keeps all elements close together and enlarges the focused deck for easier
+                        interaction.</li>
+                    <li><strong>MIXXX Integration:</strong> Leverages the free and open-source software MIXXX for the
+                        underlying audio engine and track management.</li>
+                    <li><strong>Open Source:</strong> The software is published under a GNU-GPL v3 license and is built
+                        using the C++ JUCE framework for cross-platform compatibility.</li>
+                </ul>
+                <p><strong>Links:</strong></p>
+                <ul>
+                    <li><a href="https://github.com/LIMUNIMI/DJeye" target="_blank">GitHub Repository</a></li>
+                    <li><a href="https://youtu.be/-bs080hdr7w" target="_blank">YouTube Demo Video</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <hr>
+
+
+        <section id="nith-framework">
+            <h2>The NITH Framework</h2>
+            <p>The NITH framework is a modular platform for designing and prototyping accessible human–computer
+                interaction systems tailored for users with disabilities that impair the use of hands and feet as means
+                of interaction. It is built on the core principles of <strong>simplicity, modularity, and
+                    affordability</strong> to empower developers, caregivers, and users themselves.</p>
+            <p>The framework strongly adheres to an <strong>open-source philosophy</strong> and the <strong>KISS (Keep
+                    It Simple, Stupid) principle</strong>. All software is released under open-source licenses, and all
+                hardware designs for our sensory peripherals are released under free licenses. The peripherals are
+                designed to be easily assembled using common, readily available components and open-source hardware
+                boards like Arduino.</p>
+            <img src="https://i.imgur.com/rLgP00N.png" alt="NITH framework logo" style="max-width: 200px;">
+            <cite>The NITH framework logo.</cite>
+            <p>Our primary goals with the NITH framework are to:</p>
+            <ul>
+                <li>Develop a comprehensive collection of peripherals that encompass multiple interaction channels.</li>
+                <li>Facilitate rapid prototyping for software applications specifically designed for quadriplegic users.
+                </li>
+                <li>Provide a user-friendly and convenient framework for human-machine interaction.</li>
+                <li>Offer a structured approach for creating new sensory peripherals with a standard communication
+                    protocol.</li>
+            </ul>
+
+            <div id="nithsensors" class="indented-section">
+                <h3>NITHsensors (Hardware)</h3>
+                <p><em>NITHsensors</em> is a collection of do-it-yourself (DIY), open-source hardware sensors. They are
+                    designed to be easy and affordable to build and customize, without requiring specialized
+                    manufacturing
+                    skills.</p>
+
+                <h4>NITHbreathSensor</h4>
+                <p>This sensor detects breath pressure and airflow, allowing for nuanced control similar to a
+                    sip-and-puff
+                    device. It can be assembled for approximately <strong>€30 and €35</strong> using an Arduino, a
+                    low-pressure air sensor (e.g., MPX 5010DP), and common tubing. The design includes a washable,
+                    interchangeable mouthpiece and ensures no soldering is required.</p>
+                <img src="https://i.imgur.com/V94nLnx.png" alt="Assembled NITHbreathSensor">
+                <cite>A photo of a built sample of the NITHbreathPressureSensor.</cite>
+                <img src="https://i.imgur.com/gHhC922.png" alt="NITHbreathSensor schematics">
+                <cite>Schematics for assembling the NITHbreathSensor.</cite>
+
+                <h4>NITHheadTracker</h4>
+                <p>This device measures head orientation and angular acceleration along the yaw, pitch, and roll axes.
+                    It
+                    can be used as a high-precision pointing device for tasks like mouse emulation. The estimated cost
+                    is
+                    approximately <strong>€40</strong>, using an Arduino and a BNO055 accelerometer/gyroscope board
+                    mounted
+                    on a simple headset or hairband. The integrated magnetometer ensures that the positional data does
+                    not
+                    drift over time.</p>
+                <img src="https://i.imgur.com/RJGp5XN.png" alt="Assembled NITHheadTracker">
+                <cite>A photo of a built sample of the NITHheadTracker, mounted on a headband.</cite>
+                <img src="https://i.imgur.com/c6k2iL5.png" alt="NITHheadTracker schematics">
+                <cite>Schematics for assembling the NITHheadTracker.</cite>
+
+                <h4>NITHbiteSensor</h4>
+                <p>This sensor is designed to detect dental pressure using Force-Sensing Resistors (FSRs), enabling
+                    control
+                    through teeth clenching or tapping. It is an affordable option, costing approximately
+                    <strong>€20-25</strong> to build. The assembly involves an Arduino and an FSR sensor mounted on a
+                    small,
+                    flat material like a wooden stick.
+                </p>
+            </div>
+
+            <div id="nithsoftware" class="indented-section">
+                <h3>NITHwrappers & Libraries (Software)</h3>
+                <p>The software ecosystem of NITH provides the tools to interface with sensors, process data, and build
+                    applications.</p>
+
+                <h4>Communication Protocol</h4>
+                <p>All NITH peripherals communicate using a simple, standardized protocol. This ensures that any sensor
+                    or
+                    wrapper can seamlessly connect to any application built with the NITHlibrary. The protocol is
+                    designed
+                    to be easy to implement, allowing developers to quickly integrate new custom-built peripherals.</p>
+
+                <h4>NITHwrappers</h4>
+                <p><em>NITHwrappers</em> are software components that allow commercially available sensors to be used
+                    with
+                    the NITH framework.</p>
+                <ul>
+                    <li><strong>NITHwebcamWrapper</strong>: A Python script that uses Google's MediaPipe framework to
+                        turn
+                        any standard webcam into a facial movement tracker. It can detect head rotation, eye aperture
+                        (for
+                        blinks), and mouth opening.</li>
+                    <li><strong>NITHbeamWrapper</strong>: A wrapper for the Beam Eye Tracker software, allowing a
+                        standard
+                        webcam to be used for gaze tracking and head pose estimation within the NITH ecosystem.</li>
+                </ul>
+
+                <h4>Core Libraries</h4>
+                <p>The core libraries are written in C# using .NET 8, ensuring cross-platform compatibility.</p>
+                <ul>
+                    <li><strong>NITHlibrary</strong>: The main library that provides classes for parsing input from all
+                        NITH
+                        sensors and wrappers. It includes tools for data manipulation, filtering, and calibration.</li>
+                    <li><strong>NITHemulation</strong>: An extension that provides tools to emulate standard inputs,
+                        such as
+                        mouse movements, clicks, and keyboard events.</li>
+                    <li><strong>NITHdmis</strong>: A specialized extension with tools specifically for developing
+                        Accessible
+                        Digital Musical Instruments (ADMIs).</li>
+                </ul>
+
+                <h4>Development Tools</h4>
+                <p>To accelerate development, the framework includes several helpful tools:</p>
+                <ul>
+                    <li><strong>NITHtester</strong>: A graphical application for testing sensors and wrappers. It
+                        provides
+                        real-time visualization of sensor data, status codes, and errors through gauges
+                        and plots.</li>
+                    <li><strong>NITHtemplate</strong>: A C# project template that provides a ready-made structure for
+                        new NITH applications, suggesting a design philosophy that simplifies development.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="publications" style="margin-top: 3em;">
+            <h2>Publications</h2>
+            <ul>
+                <li>Bottarelli, Fabio, Nicola Davanzo, Giorgio Presti, and Federico Avanzini. “DJeye: Towards an
+                    Accessible Gaze-Based Musical Interface for Quadriplegic DJs.” In <em>Proceedings of the 2023 Sound
+                        and Music Computing Conference</em>. Stockholm, Sweden, 2023.</li>
+                <li>Davanzo, Nicola. “Accessible Digital Musical Instruments for Quadriplegic Musicians.” Ph. D. Thesis,
+                    Università degli Studi di Milano, 2022.</li>
+                <li>Davanzo, Nicola. “ALS and E-Health during COVID-19 Pandemic,” 2021.</li>
+                <li>Davanzo, Nicola. “Brain-Computer Musical Interfacing with Emotiv Headsets: An Overview,” 2021.</li>
+                <li>Davanzo, Nicola, and Federico Avanzini. “A Dimension Space for the Evaluation of Accessible Digital
+                    Musical Instruments.” In <em>Proc. 20th Int. Conf. on New Interfaces for Musical Expression (NIME
+                        ’20)</em>. NIME ’20, 2020. <a href="https://doi.org/10.5281/ZENODO.4813326"
+                        target="_blank">https://doi.org/10.5281/ZENODO.4813326</a>.</li>
+                <li>Davanzo, Nicola, and Federico Avanzini. “A Method for Learning Netytar: An Accessible Digital
+                    Musical Instrument.” In <em>Proceedings of the 12th International Conference on Computer Supported
+                        Education</em>, 620–28. Prague, Czech Republic: SCITEPRESS - Science and Technology
+                    Publications, 2020. <a href="https://doi.org/10.5220/0009816106200628"
+                        target="_blank">https://doi.org/10.5220/0009816106200628</a>.</li>
+                <li>Davanzo, Nicola, and Federico Avanzini. “Design Concepts for Gaze-Based Digital Musical
+                    Instruments.” In <em>Proceedings of the 2022 Sound and Music Computing Conference</em>, 477–83.
+                    Saint-Etiénne, France: Zenodo, 2022.</li>
+                <li>Davanzo, Nicola, and Federico Avanzini. “Experimental Evaluation of Three Interaction Channels for
+                    Accessible Digital Musical Instruments.” In <em>Proc. ’20 Int. Conf. on Computers Helping People
+                        With Special Needs</em>, 437–45. Online Conf.: Springer, Cham, 2020.</li>
+                <li>Davanzo, Nicola, and Federico Avanzini. “Hands-Free Accessible Digital Musical Instruments:
+                    Conceptual Framework, Challenges, and Perspectives.” <em>IEEE Access</em> 8 (2020): 163975–95. <a
+                        href="https://doi.org/10.1109/ACCESS.2020.3019978"
+                        target="_blank">https://doi.org/10.1109/ACCESS.2020.3019978</a>.</li>
+                <li>Davanzo, Nicola, and Federico Avanzini. “Resin: A Vocal Tract Resonances and Head Based Accessible
+                    Digital Musical Instrument.” In <em>Proceedings of the 2021 AudioMostly Conf</em>. Trento, Italy
+                    (online conf.), 2021. <a href="https://doi.org/10.1145/3478384.3478403"
+                        target="_blank">https://doi.org/10.1145/3478384.3478403</a>.</li>
+                <li>Davanzo, Nicola, Federico Avanzini, Luca A Ludovico, Davys Moreno, Antonio Moreira, Julia Azevedo,
+                    and Carlos Marques. “A Case Study on Netychords: Crafting Accessible Digital Musical Instrument
+                    Interaction for a Special Needs Scenario.” In <em>Proc. ’23 Conf. on Computer-Human Interaction
+                        Research and Applications</em>. Rome, Italy: Springer, 2023.</li>
+                <li>Davanzo, Nicola, Matteo De Filippis, and Federico Avanzini. “Netychords: An Accessible Digital
+                    Musical Instrument for Playing Chords Using Gaze and Head Movements.” In <em>In Proc. ’21 Int. Conf.
+                        on Computer- Human Interaction Research and Applications (CHIRA ’21)</em>, 8. Online conf.:
+                    SciTePress, 2021.</li>
+                <li>Davanzo, Nicola, Piercarlo Dondi, Mauro Mosconi, and Marco Porta. “Playing Music with the Eyes
+                    through an Isomorphic Interface.” In <em>Proc. of the Workshop on Communication by Gaze
+                        Interaction</em>, 1–5. Warsaw, Poland: ACM Press, 2018. <a
+                        href="https://doi.org/10.1145/3206343.3206350"
+                        target="_blank">https://doi.org/10.1145/3206343.3206350</a>.</li>
+                <li>Davanzo, Nicola, Mauro Mosconi, and Marco Porta. “Sviluppo e Testing Di Interfacce Grafiche per
+                    Strumenti Musicali Controllati Attraverso Gli Occhi.” Università di Pavia, 2018.</li>
+                <li>Davanzo, Nicola, Luca Valente, Luca A. Ludovico, and Federico Avanzini. “Kiroll: A Gaze-Based
+                    Instrument for Quadriplegic Musicians Based on the Context-Switching Paradigm.” In <em>Proc. ’23
+                        AudioMostly Conference</em>. Edinburgh, Scotland: ACM, 2023.</li>
+                <li>Guillen, Sergio, Isabel Barbancho, Lorenzo J Tardon, Ana M Barbancho, and Nicola Davanzo.
+                    “Understanding Music-Related Brain Activity: Musical Pitch Processing through EEG Signals,” n.d.
+                </li>
+                <li>Moreno, Davys, Júlia Azevedo, Bernardo Lima, and Nicola Davanzo. “Music for All: An Intervention
+                    Project in an Artistic School in Portugal.” <em>The Qualitative Report</em> 28, no. 10 (October 14,
+                    2023): 2953–79. <a href="https://doi.org/10.46743/2160-3715/2023.6682"
+                        target="_blank">https://doi.org/10.46743/2160-3715/2023.6682</a>.</li>
+            </ul>
+        </section>
+
+        <footer style="margin-top: 3em; padding-top: 2em; border-top: 1px solid #eee;">
+            <p style="font-size: 0.9em; color: #777;">© 2024 LIM - Laboratorio di Informatica Musicale. All rights
+                reserved.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
