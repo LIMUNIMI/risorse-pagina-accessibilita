@@ -1,0 +1,384 @@
+<!doctype html>
+<html class="notion-html" data-notion-html="web">
+
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <noscript>
+        <meta http-equiv="refresh" content="0;url=https://www.notion.so/disabled-javascript.html">
+    </noscript>
+    <script>(function () { var e, r = window.navigator.userAgent, t = /Windows.*Edge/i.test(r), i = !t && /Chrome/i.test(r); if (i) { if ((e = r.match(/Chrome\/(\d+)/i)) && e[1]) return parseInt(e[1], 10) <= 84 } else if (t || i || !/Safari/i.test(r)) if (/Firefox/i.test(r)) { if ((e = r.match(/Firefox\/(\d+)/i)) && e[1]) return parseInt(e[1], 10) <= 114 } else { if (t) return !0; if (/Trident/i.test(r)) return !0 } else if ((e = r.match(/Version\/(\d+)/i)) && e[1]) return parseInt(e[1], 10) <= 13; return !1 })() && window.location.replace("/unsupported-browser.html")</script>
+    <script>window.__webStartTime = performance.now(), performance.mark("__webStartTime")</script>
+    <title>Notion</title>
+    <meta name="description"
+        content="A tool that connects everyday work into one space. It gives you and your teams AI tools—search, writing, note-taking—inside an all-in-one, flexible workspace." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@NotionHQ" />
+    <meta name="twitter:title" content="The AI workspace that works for you. | Notion" />
+    <meta name="twitter:description"
+        content="A tool that connects everyday work into one space. It gives you and your teams AI tools—search, writing, note-taking—inside an all-in-one, flexible workspace." />
+    <meta name="twitter:url" content="https://www.notion.so" />
+    <meta name="twitter:image" content="https://www.notion.so/images/meta/default.png" />
+    <meta property="og:site_name" content="Notion" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.notion.so" />
+    <meta property="og:title" content="The AI workspace that works for you. | Notion" />
+    <meta property="og:description"
+        content="A tool that connects everyday work into one space. It gives you and your teams AI tools—search, writing, note-taking—inside an all-in-one, flexible workspace." />
+    <meta property="og:image" content="https://www.notion.so/images/meta/default.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta property="apple-itunes-app" content="app-id=1232780281" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="apple-touch-icon" href="/images/logo-ios.png" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link href="/print.e2ba4c31.css" rel="stylesheet" media="print">
+    <style>
+        body {
+            background: #fff
+        }
+
+        body.dark {
+            background: #191919
+        }
+
+        @keyframes startup-shimmer-animation {
+            0% {
+                transform: translateX(-100%) translateZ(0)
+            }
+
+            100% {
+                transform: translateX(100%) translateZ(0)
+            }
+        }
+
+        @keyframes startup-shimmer-fade-in {
+            0% {
+                opacity: 0
+            }
+
+            100% {
+                opacity: 1
+            }
+        }
+
+        @keyframes startup-spinner-rotate {
+            0% {
+                transform: rotate(0) translateZ(0)
+            }
+
+            100% {
+                transform: rotate(360deg) translateZ(0)
+            }
+        }
+
+        #initial-loading-spinner {
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            z-index: -1;
+            display: none;
+            align-items: center;
+            justify-content: center
+        }
+
+        #initial-loading-spinner .spinner {
+            position: relative;
+            display: inline-block;
+            height: 22px;
+            width: 22px;
+            pointer-events: none
+        }
+
+        #initial-loading-spinner .spinner__circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid rgba(84, 72, 49, .15)
+        }
+
+        .dark #initial-loading-spinner .spinner__circle {
+            border-color: rgba(255, 255, 255, .13)
+        }
+
+        #initial-loading-spinner .spinner__arc {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border-top: 2px solid #32302c;
+            border-right: 2px solid #32302c;
+            border-bottom: 2px solid transparent;
+            border-left: 2px solid transparent;
+            mask: linear-gradient(90deg, transparent 66.66%, #000 66.66%);
+            animation: startup-spinner-rotate 1.2s linear infinite
+        }
+
+        .dark #initial-loading-spinner .spinner__arc {
+            border-color: #fff
+        }
+
+        #skeleton {
+            background: #fff;
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            z-index: -1;
+            display: none;
+            overflow: hidden
+        }
+
+        #initial-loading-spinner.show,
+        #skeleton.show {
+            display: flex
+        }
+
+        body.dark #skeleton {
+            background: #191919
+        }
+
+        .notion-front-page #skeleton,
+        .notion-mobile #skeleton {
+            display: none
+        }
+
+        #skeleton-sidebar {
+            background-color: #f8f8f7;
+            box-shadow: inset -1px 0 0 0 #eeeeec;
+            display: flex;
+            width: 240px;
+            flex-direction: column;
+            padding: 12px 14px;
+            overflow: hidden
+        }
+
+        body.dark #skeleton-sidebar {
+            background-color: #202020;
+            box-shadow: inset -1px 0 0 0 #2a2a2a
+        }
+
+        #skeleton.isElectron #skeleton-sidebar {
+            padding-top: 46px
+        }
+
+        #skeleton .row {
+            display: flex;
+            margin-bottom: 11px;
+            align-items: center
+        }
+
+        #skeleton .row.fadein {
+            animation: 1s ease-in 0s 1 normal both running startup-shimmer-fade-in
+        }
+
+        #skeleton .chevron {
+            width: 12px;
+            height: 12px;
+            display: block;
+            margin-right: 4px;
+            fill: rgba(227, 226, 224, .5)
+        }
+
+        body.dark #skeleton .chevron {
+            fill: #2f2f2f
+        }
+
+        .startup-shimmer {
+            background: rgba(227, 226, 224, .5);
+            overflow: hidden;
+            position: relative
+        }
+
+        body.dark .startup-shimmer {
+            background: #2f2f2f
+        }
+
+        .startup-shimmer::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            animation: 1s linear infinite startup-shimmer-animation;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .03) 50%, rgba(0, 0, 0, 0) 100%)
+        }
+
+        body.dark .startup-shimmer::before {
+            background: linear-gradient(90deg, transparent 0, rgba(86, 86, 86, .1) 50%, transparent 100%)
+        }
+
+        #skeleton .icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px
+        }
+
+        #skeleton .text {
+            height: 10px;
+            border-radius: 10px
+        }
+
+        #skeleton .draggable {
+            -webkit-app-region: drag;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 36px;
+            display: none
+        }
+
+        #skeleton.isElectron .draggable {
+            display: block
+        }
+    </style>
+    <script>window.__notion_html_async = []; window.DEVICE_READY_P = new Promise(r => (o => { document.dispatchEvent = function (e) { return "deviceready" === e?.type && r(), o.apply(this, arguments) } })(document.dispatchEvent))</script>
+    <script src="/_assets/ClientFramework-1a10a29ef42001a2.js" async></script>
+    <script src="/_assets/22235-d3fe14b4420ad141.js" async></script>
+    <script src="/_assets/46474-179d5cf629af96eb.js" async></script>
+    <script src="/_assets/85502-d0a3f07721a59ce1.js" async></script>
+    <script src="/_assets/app-56a73657be9ecf8b.js" async></script>
+    <link href="/_assets/app-5433ca08b184f00e.css" rel="stylesheet">
+</head>
+
+<body class="notion-body">
+    <script type="application/json" id="theme-data">{"mode":"system"}</script>
+    <script>(() => { var e = "light", t = localStorage.getItem("theme"); if (t) try { (d = JSON.parse(t)) && d.mode && (e = d.mode) } catch (e) { } var a = document.getElementById("theme-data"); if (a) try { var d; (d = JSON.parse(a.textContent)) && "<<DEFAULT_THEME>>" !== d.mode && (e = d.mode, window.notionTheme = e) } catch (e) { } "dark" === e && document.body.classList.add("dark") })()</script>
+    <div id="initial-loading-spinner"><span data-testid="loading-spinner" role="progressbar" aria-live="polite"
+            aria-busy="true" class="spinner"><span class="spinner__circle"></span> <span
+                class="spinner__arc"></span></span></div>
+    <div id="skeleton" role="progressbar" aria-valuetext="Loading...">
+        <div id="skeleton-sidebar">
+            <div class="row" style="margin-bottom:22px">
+                <div class="startup-shimmer icon" style="width:22px;height:22px;padding:1px"></div>
+                <div class="startup-shimmer text" style="width:177px;margin-left:8px"></div>
+            </div>
+            <div class="row" style="margin-bottom:20px">
+                <div class="startup-shimmer text" style="width:78px"></div>
+            </div>
+            <div class="row" style="margin-bottom:20px">
+                <div class="startup-shimmer text" style="width:78px"></div>
+            </div>
+            <div class="row" style="margin-bottom:20px">
+                <div class="startup-shimmer text" style="width:78px"></div>
+            </div>
+            <div class="row" style="margin-bottom:36px">
+                <div class="startup-shimmer text" style="width:135px"></div>
+            </div>
+            <div class="row" style="margin-bottom:14px">
+                <div class="startup-shimmer text" style="width:56px"></div>
+            </div>
+            <div class="row">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:120px;margin-left:8px"></div>
+            </div>
+            <div class="row">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:100px;margin-left:8px"></div>
+            </div>
+            <div class="row">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:140px;margin-left:8px"></div>
+            </div>
+            <div class="row">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:100px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:1s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:100px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:1s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:80px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:1s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:120px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:1s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:80px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:2s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:80px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:2s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:120px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:2s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:80px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:2s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:140px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:3s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:140px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:3s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:140px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:3s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:80px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:3s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:120px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:4s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:100px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:4s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:100px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:4s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:120px;margin-left:8px"></div>
+            </div>
+            <div class="row fadein" style="animation-delay:4s">
+                <div class="startup-shimmer icon"></div>
+                <div class="startup-shimmer text" style="width:120px;margin-left:8px"></div>
+            </div>
+        </div>
+        <div style="flex-grow:1;position:relative">
+            <div class="row" style="position:absolute;top:0;left:0;padding:12px 16px">
+                <div class="startup-shimmer icon" style="width:20px;height:20px"></div>
+                <div class="startup-shimmer text" style="width:78px;margin-left:8px"></div>
+            </div>
+            <div class="row" style="position:absolute;top:0;right:0;padding:12px 16px">
+                <div class="startup-shimmer text" style="width:78px;margin:6px 0"></div>
+            </div>
+        </div>
+        <div class="draggable"></div>
+        <script>(e => { function t(t) { var i = e.localStorage && e.localStorage.getItem(t), d = i && JSON.parse(i); if (d && d.value) return d.value } var i = document.getElementById("skeleton"), d = document.getElementById("skeleton-sidebar"), n = document.getElementById("initial-loading-spinner"), o = t("LRU:KeyValueStore2:sidebar"), a = t("LRU:KeyValueStore2:current-user-id"), l = "undefined" != typeof global || e.__isElectron, r = /ReactNative|MobileNative|Android|iPad|iPhone|iPod|Windows Phone/.test(navigator.userAgent); !i || void 0 === a || r || l ? n && n.classList.add("show") : (i.classList.add("show"), d && o && (!1 === o.expanded && d.remove(), o.width > 0 && (d.style.width = String(o.width) + "px"))) })(window)</script>
+    </div>
+    <style id="scroll-properties"></style>
+    <div id="notion-app"></div>
+    <script>window.LOCALE_SETUP = void 0, window.LOCALE_SETUP_P = Promise.resolve()</script>
+    <script>(() => { try { window.addEventListener("error", (function (e) { if (e.target && (e.target instanceof HTMLScriptElement || e.target instanceof HTMLLinkElement && "stylesheet" === e.target.rel)) { var t = e.target instanceof HTMLScriptElement ? "script" : "stylesheet", r = e.target.src || e.target.href; console.error("Resource Sentinel noted a failed resource load of type", t, r), fetch("https://http-inputs-notion.splunkcloud.com/services/collector/raw", { method: "POST", headers: { "Content-Type": "text/plain; charset=utf-8", Authorization: "Splunk EA76605A-F565-4B17-A496-34435622A1EB" }, mode: "cors", keepalive: !0, body: JSON.stringify({ environment: "production", level: "error", from: "resourceSentinel", type: "resourceLoadFailure", error: { message: `Failed to load "${t}" resource`, miscDataString: r } }), priority: "low" }).catch(e => { console.error("Resource Sentinel failed to send error to Splunk", e) }) } }), !0), console.info("Resource Sentinel initialized...") } catch (e) { console.error("Resource Sentinel failed to initialize", e) } })()</script>
+    <script>__notion_html_async.push("opfsBootupRegistry", { "isServerEnabled": false })</script>
+    <script>__notion_html_async.push("ready", !0)</script>
+    <script>__notion_html_async.push("bootReady", true)</script>
+    <script>__notion_html_async.push("serverSidePrefetchDataPending", true)</script>
+    <script>__notion_html_async.push("serverSidePrefetchData", { "pageId": "56ab43db-493a-423f-9e88-23af04fa9c46", "recordMap": { "__version__": 3, "block": { "56ab43db-493a-423f-9e88-23af04fa9c46": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "56ab43db-493a-423f-9e88-23af04fa9c46", "version": 381, "type": "page", "properties": { "title": [["NITHsensors and NITHwrappers"]] }, "content": ["59babedb-2bd5-4be9-a00a-a985cf1531bf", "43e47d71-26d7-4ca9-83fe-d2c714a5bf8d", "cbd007cd-6f89-49ac-81b9-95469a6c3019", "be00a580-d0f3-423c-bfa1-e19755c22d46", "16d9c6a4-1533-4d66-a9c5-b381c3cce016", "fd612b2b-32ae-43e2-a49f-13852cdfaa53", "75df53d6-fe4e-4ac6-8f77-95a143a47c45", "08c3e738-cd11-4968-a6e0-8e27b7e21907", "05aa05df-6011-4566-97ee-6c77da8f33b1", "3eba0863-3837-4883-a02d-62d1da7bb7f5", "b35015b1-3709-4c00-b17c-baae7cf4204a", "0f23a64b-b070-4973-a63d-1b5bc231e995", "5ec534af-3e3c-40e9-a03a-32d4a81ff6b3", "1a76c72f-4bec-4acc-b610-a7b38af9d09f", "7b3af055-fd9e-4d24-915d-e18221c03d55", "713ddfa8-75f5-47f7-86d5-4aaedcd8465a", "0ba78146-8e48-48a2-ba2c-337df55326fb", "54518c51-8667-4dbb-a602-30919f5f0185", "b6005b56-afd4-45a4-b4f2-855ccdc7b6df", "48860905-d26c-4f2a-bf39-a91bf5872f75", "a0d24669-58d4-4f59-ae9e-9792da948f90", "3c1943fe-e401-4591-868c-26692aa1699c", "2f4c9aef-d786-4d94-b670-735f6f4c261a", "586837aa-2e5e-4dbb-8331-be1916b255b2", "5cc67571-ea1b-4dad-9f96-b7a4ed86f77b", "1fcde568-44cd-807e-b6c7-db623e01752a", "33098bc2-dfd2-454a-be8a-721e95c5d5f3", "1fcde568-44cd-8010-9b88-ea32511c5e3f", "1fcde568-44cd-8095-aeff-c9f22810bd69", "1fcde568-44cd-8037-aeec-c27416dcebc5", "1fcde568-44cd-80d4-a782-f5f976780499"], "format": { "page_font": "serif", "page_icon": "https://prod-files-secure.s3.us-west-2.amazonaws.com/aeac5776-d5a4-4228-96d3-63f8b36740f8/3a46f5e3-d3bf-40c7-8d58-0b3ffa6fccf2/NithLogo_White_Trace.png", "page_full_width": true, "page_section_visibility": { "comments": "section_show", "backlinks": "section_collapsed", "margin_comments": "inline" }, "social_media_image_preview_url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/aeac5776-d5a4-4228-96d3-63f8b36740f8/d7594f2f-fd07-4072-9597-684674d53fb2/SocialMediaPreviewImage.png" }, "created_time": 1654084045333, "last_edited_time": 1748015161727, "parent_id": "1a0de568-44cd-8099-b97d-f618da497fc1", "parent_table": "block", "alive": true, "file_ids": ["3a46f5e3-d3bf-40c7-8d58-0b3ffa6fccf2", "d7594f2f-fd07-4072-9597-684674d53fb2"], "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1a0de568-44cd-8099-b97d-f618da497fc1": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1a0de568-44cd-8099-b97d-f618da497fc1", "version": 70, "type": "page", "properties": { "title": [["NITH framework"]] }, "content": ["1a0de568-44cd-80cc-8f54-e23756016301", "1a0de568-44cd-8031-b50b-e2b1fca54ed1", "56ab43db-493a-423f-9e88-23af04fa9c46", "24818edc-9a49-461a-90a8-17d6a975d3bd", "150de568-44cd-805e-8331-fe0158c6ab21", "151de568-44cd-80aa-8098-d31821204add", "1a0de568-44cd-80e0-837a-f9e14bf2e980"], "format": { "page_icon": "notion://custom_emoji/aeac5776-d5a4-4228-96d3-63f8b36740f8/1a0de568-44cd-806f-9fbd-007a23fccb46", "social_media_image_preview_url": "attachment:e8ba567b-8ad6-484a-bee1-1c90cac9a058:SocialMediaPreviewImage.png" }, "created_time": 1740063756848, "last_edited_time": 1740063901293, "parent_id": "345ad553-053a-465e-8df1-769a13626375", "parent_table": "block", "alive": true, "file_ids": ["acac04c1-283c-4bed-8ac6-117868ceecf5", "96870566-05b4-404a-8e90-99dc8f480818", "e8ba567b-8ad6-484a-bee1-1c90cac9a058"], "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "345ad553-053a-465e-8df1-769a13626375": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "345ad553-053a-465e-8df1-769a13626375", "version": 151, "type": "transclusion_container", "content": ["b6aad825-cbf9-4f08-9a36-d7f145e2fa13", "b61e054d-327e-4543-a2b8-bb135359d58b", "d6c7aeaa-8c1c-4a28-9dde-e7a6cdd7d8a6", "3a666176-e995-45b2-b022-e56b863ba277", "34a52d40-57d0-4a10-bf1e-cea792d3e8d3", "2c7495b2-0e10-4c64-ad71-4c1832cec642", "1d684d67-8064-4c9b-9a81-2f9c99e566f7", "031e7ed7-fd0f-410c-83b5-0a0df812eef2", "1a0de568-44cd-8099-b97d-f618da497fc1", "150de568-44cd-8026-9b4d-dba4b3220c0b", "ddac7aff-5308-48c8-b0b6-6fb0fb30db48", "3a6cfb04-dec6-4d90-84be-aab417344956", "150de568-44cd-8079-86e8-dd42d6daa4bc", "3183cf89-bc9a-4a9d-96cd-1e59bf96b1cc", "6524c03c-08ed-4ed3-9361-db6620d2a83d", "6d077e3a-a231-49a3-a739-67d81536130a", "b24babe5-0f37-4fb1-be8a-c29dbe441563", "490f100a-219d-4e7f-a1eb-3b3f7d372d14", "f7fc6a4e-e251-421d-bd7f-4a66b45849ec", "2a58fd25-f308-42a9-9679-5354d163ef00", "f6a3312b-5c9a-4b8d-86f7-464edabc9d89", "c9cafde4-83e5-4a6b-bcd4-f968e63c76f6", "78d3192a-7782-4c1b-a847-b182deacaf37", "3189202c-4093-4800-9b7e-01f24ad3305c"], "created_time": 1654264830823, "last_edited_time": 1745358971153, "parent_id": "c634140c-4730-41c5-9177-f48acc885f9f", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "c634140c-4730-41c5-9177-f48acc885f9f": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "c634140c-4730-41c5-9177-f48acc885f9f", "version": 162, "type": "column", "content": ["345ad553-053a-465e-8df1-769a13626375", "144de568-44cd-80c6-9923-ea15a13ae0e6"], "format": { "column_ratio": 0.125 }, "created_time": 1654077540000, "last_edited_time": 1732128745776, "parent_id": "d3d3589f-46c7-412e-9b78-5f0c671a0dd1", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "d3d3589f-46c7-412e-9b78-5f0c671a0dd1": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "d3d3589f-46c7-412e-9b78-5f0c671a0dd1", "version": 19, "type": "column_list", "content": ["c634140c-4730-41c5-9177-f48acc885f9f", "8670e0a2-c5a5-4632-8062-ad7e3cc2a45e"], "created_time": 1654077540000, "last_edited_time": 1654264800000, "parent_id": "31a619bc-c251-4c3e-aa6d-7fb59614aa84", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "31a619bc-c251-4c3e-aa6d-7fb59614aa84": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "31a619bc-c251-4c3e-aa6d-7fb59614aa84", "version": 281, "type": "page", "properties": { "title": [["Neeqstock"]] }, "content": ["5400ac25-7138-41a8-83a4-b72abc1a3385", "f4956be0-ce0f-4d35-a2f4-7cccc9d7f9f0", "d3d3589f-46c7-412e-9b78-5f0c671a0dd1", "7f383398-78f3-46be-b3c4-338b60f05320", "b9c65a44-2848-4ab3-af92-73beb1a42aaa", "1a2a40ef-b480-4a69-8cab-21cb3c8383ae"], "format": { "site_id": "1b5c5776-d5a4-8149-814c-0079b7046784", "page_font": "serif", "page_icon": "https://s3-us-west-2.amazonaws.com/secure.notion-static.com/301dc46f-fcba-4c88-b969-f7ee3fab556c/CymFaNick_small_black.png", "page_full_width": true, "page_cover_position": 0.7 }, "permissions": [{ "role": "reader", "type": "public_permission", "is_site": true, "added_timestamp": 1654077092444, "allow_duplicate": false, "allow_search_engine_indexing": true }], "created_time": 1654076700000, "last_edited_time": 1745358971153, "parent_id": "7aafad9a-ac2f-4ff5-9219-1b016ed16fac", "parent_table": "block", "alive": true, "file_ids": ["f5fa2231-2bc7-43e8-8a67-c831dc47eab9", "a77d24f0-57d1-434b-b61e-0915c5cde11e", "51646ef7-e6e8-4555-8124-0c3bb11f2f9f", "8bb68304-329c-4c07-b598-6758e97020cc", "2f1826be-0890-4023-8780-552e989dbb9e", "301dc46f-fcba-4c88-b969-f7ee3fab556c"], "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "7aafad9a-ac2f-4ff5-9219-1b016ed16fac": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "role": "none" } }, "59babedb-2bd5-4be9-a00a-a985cf1531bf": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "59babedb-2bd5-4be9-a00a-a985cf1531bf", "version": 102, "type": "text", "properties": { "title": [["A collections of DIY Open-Hardware sensors for Accessible Digital Musical Instruments interfacing", [["i"]]]] }, "created_time": 1654084080000, "last_edited_time": 1654084080000, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "43e47d71-26d7-4ca9-83fe-d2c714a5bf8d": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "43e47d71-26d7-4ca9-83fe-d2c714a5bf8d", "version": 95, "type": "external_object_instance", "format": { "uri": "https://github.com/Neeqstock/NITHSensors", "stale": false, "bot_id": "614edcd2-851a-4c87-9fa5-ecafbb9e53c3", "domain": "github.com", "attributes": [{ "id": "title", "name": "Name", "type": "inline", "format": { "type": "title", "section": "title" }, "values": ["NITHSensors"] }, { "id": "owner", "name": "Owner", "type": "relation", "values": ["https://github.com/Neeqstock"] }, { "id": "updated_at", "name": "Updated At", "type": "inline", "format": { "type": "last_edited_time" }, "values": [{ "type": "datetime", "time_zone": "UTC", "start_date": "2022-10-20", "start_time": "12:46" }] }], "original_url": "https://github.com/Neeqstock/NITHSensors", "external_object_id": "49bf128f-6404-40b0-9c53-c5d1f8a3ef20", "related_external_object_uris_to_instance_ids": { "https://github.com/Neeqstock": "68df8e29-6ae0-4cd6-86e1-e97fdd4a5c21" } }, "created_time": 1666270620000, "last_edited_time": 1748392937212, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "cbd007cd-6f89-49ac-81b9-95469a6c3019": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "cbd007cd-6f89-49ac-81b9-95469a6c3019", "version": 12, "type": "divider", "created_time": 1654084080000, "last_edited_time": 1654084080000, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "be00a580-d0f3-423c-bfa1-e19755c22d46": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "be00a580-d0f3-423c-bfa1-e19755c22d46", "version": 1969, "type": "text", "properties": { "title": [["NITHsensors is a collection of hardware/software solutions created to harness the movement capabilities of individuals with motor disabilities such as quadriplegia, to add new ways to let them interact with computers. It includes both easily replicable hardware designs and software applications to exploit commonly available hardware (such as webcams), which I provide free for use."]] }, "created_time": 1712132272738, "last_edited_time": 1717764284841, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "16d9c6a4-1533-4d66-a9c5-b381c3cce016": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "16d9c6a4-1533-4d66-a9c5-b381c3cce016", "version": 72, "type": "text", "properties": { "title": [["\nIt was originally thought for music interaction, but the potential applications in the field of accessibility are multiple."]] }, "created_time": 1712855132146, "last_edited_time": 1712855146524, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "fd612b2b-32ae-43e2-a49f-13852cdfaa53": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "fd612b2b-32ae-43e2-a49f-13852cdfaa53", "version": 2, "type": "sub_header", "properties": { "title": [["Collection"]] }, "created_time": 1712137761208, "last_edited_time": 1712137761223, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "75df53d6-fe4e-4ac6-8f77-95a143a47c45": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "75df53d6-fe4e-4ac6-8f77-95a143a47c45", "version": 245, "type": "text", "properties": { "title": [["Each design comes with assembly instructions when needed, and an indication of which interaction channels it enables."]] }, "created_time": 1712137761208, "last_edited_time": 1712229300340, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "08c3e738-cd11-4968-a6e0-8e27b7e21907": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "08c3e738-cd11-4968-a6e0-8e27b7e21907", "version": 44, "type": "collection_view", "view_ids": ["c9f13ccc-8d0a-485c-a112-e8c95fbf103b"], "collection_id": "0505eec7-d7d8-475b-96ce-916ca83315c4", "format": { "collection_pointer": { "id": "0505eec7-d7d8-475b-96ce-916ca83315c4", "table": "collection", "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8" } }, "created_time": 1712152149025, "last_edited_time": 1717765199755, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "05aa05df-6011-4566-97ee-6c77da8f33b1": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "05aa05df-6011-4566-97ee-6c77da8f33b1", "version": 2, "type": "sub_header", "properties": { "title": [["Philosophy"]] }, "created_time": 1712137761208, "last_edited_time": 1712137761223, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "3eba0863-3837-4883-a02d-62d1da7bb7f5": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "3eba0863-3837-4883-a02d-62d1da7bb7f5", "version": 131, "type": "text", "properties": { "title": [["NITHsensors designs were developed with a specific philosophy in mind:"]] }, "created_time": 1712137761209, "last_edited_time": 1717765495123, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "b35015b1-3709-4c00-b17c-baae7cf4204a": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "b35015b1-3709-4c00-b17c-baae7cf4204a", "version": 40, "type": "bulleted_list", "properties": { "title": [["Replicability", [["b"]]], [": they are designed to be easily replicated using a combination of readily available materials (e.g., from DIY stores), chips, and sensors that can be ordered online."]] }, "created_time": 1712137761209, "last_edited_time": 1712854858557, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "0f23a64b-b070-4973-a63d-1b5bc231e995": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "0f23a64b-b070-4973-a63d-1b5bc231e995", "version": 32, "type": "bulleted_list", "properties": { "title": [["Low Cost", [["b"]]], [": they aim to maximize functionality while keeping costs as low as possible."]] }, "created_time": 1712137761210, "last_edited_time": 1712854867926, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "5ec534af-3e3c-40e9-a03a-32d4a81ff6b3": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "5ec534af-3e3c-40e9-a03a-32d4a81ff6b3", "version": 48, "type": "bulleted_list", "properties": { "title": [["Simplicity", [["b"]]], [": they are designed to be as simple as possible to construct, without unnecessary complexity."]] }, "created_time": 1712137761210, "last_edited_time": 1712854874117, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1a76c72f-4bec-4acc-b610-a7b38af9d09f": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1a76c72f-4bec-4acc-b610-a7b38af9d09f", "version": 32, "type": "bulleted_list", "properties": { "title": [["Ease of Assembly", [["b"]]], [": they are engineered to require the fewest possible skills for assembly, allowing anyone to build them."]] }, "created_time": 1712137761210, "last_edited_time": 1712854882308, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "7b3af055-fd9e-4d24-915d-e18221c03d55": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "7b3af055-fd9e-4d24-915d-e18221c03d55", "version": 6, "type": "bulleted_list", "properties": { "title": [["Free and Open-Source Licenses", [["b"]]], [": all designs and assembly instructions are published under Open-Source Hardware licenses, and the related software is released under Open-Source Software licenses. This means that anyone can access and contribute to them."]] }, "created_time": 1712137761211, "last_edited_time": 1712854863421, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "713ddfa8-75f5-47f7-86d5-4aaedcd8465a": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "713ddfa8-75f5-47f7-86d5-4aaedcd8465a", "version": 5, "type": "text", "created_time": 1712854888102, "last_edited_time": 1712854888298, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "0ba78146-8e48-48a2-ba2c-337df55326fb": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "0ba78146-8e48-48a2-ba2c-337df55326fb", "version": 2, "type": "sub_header", "properties": { "title": [["Uses"]] }, "created_time": 1712137761211, "last_edited_time": 1712137761223, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "54518c51-8667-4dbb-a602-30919f5f0185": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "54518c51-8667-4dbb-a602-30919f5f0185", "version": 937, "type": "text", "properties": { "title": [["The NithSensors are a product of my research project, where I'm developing accessible musical instruments for individuals with quadriplegia. Our instruments are operated by NithSensors alone or in combination with other commercially available peripherals.\nHowever, music is not the only important aspect of life… There’s potential for using these solutions in other contexts, such as developing applications for general computer accessibility."]] }, "created_time": 1712148027136, "last_edited_time": 1712148238010, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "b6005b56-afd4-45a4-b4f2-855ccdc7b6df": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "b6005b56-afd4-45a4-b4f2-855ccdc7b6df", "version": 2, "type": "sub_header", "properties": { "title": [["Interaction Channels"]] }, "created_time": 1712148027136, "last_edited_time": 1712148027148, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "48860905-d26c-4f2a-bf39-a91bf5872f75": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "48860905-d26c-4f2a-bf39-a91bf5872f75", "version": 94, "type": "text", "properties": { "title": [["By interaction channels, I mean different and potentially independent movement capabilities. In "], ["an article", [["a", "https://ieeexplore.ieee.org/abstract/document/9179732"]]], [", we identified a list of interaction channels available to people with quadriplegia, divided into four categories (or macro-areas)."]] }, "created_time": 1712148027137, "last_edited_time": 1712148301499, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "a0d24669-58d4-4f59-ae9e-9792da948f90": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "a0d24669-58d4-4f59-ae9e-9792da948f90", "version": 34, "type": "text", "properties": { "title": [["Below is a summary table, indicating which channels are already detectable with NithSensors devices and/or with commercial alternatives."]] }, "created_time": 1712148027138, "last_edited_time": 1712148328931, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "3c1943fe-e401-4591-868c-26692aa1699c": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "3c1943fe-e401-4591-868c-26692aa1699c", "version": 5, "type": "column_list", "content": ["c07942e8-5895-4bd1-9b7d-0fa0e189e625", "85a2bd95-71e5-4e51-833c-03e039b79180"], "created_time": 1712149210920, "last_edited_time": 1712149210920, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "2f4c9aef-d786-4d94-b670-735f6f4c261a": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "2f4c9aef-d786-4d94-b670-735f6f4c261a", "version": 2, "type": "sub_header", "properties": { "title": [["Developing Applications Using NithSensors"]] }, "created_time": 1712148027138, "last_edited_time": 1712148027148, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "586837aa-2e5e-4dbb-8331-be1916b255b2": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "586837aa-2e5e-4dbb-8331-be1916b255b2", "version": 2, "type": "text", "properties": { "title": [["All NithSensors send a standard data string each time they perform a sampling. The output of all NithSensors uses a very simple standard format. This format can be seen in the "], ["Readme of the GitHub repository", [["a", "https://github.com/LIMUNIMI/NITHsensors"]]], [" under the "], ["Standard Output", [["i"]]], [" section."]] }, "created_time": 1712148027138, "last_edited_time": 1712148027148, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "5cc67571-ea1b-4dad-9f96-b7a4ed86f77b": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "5cc67571-ea1b-4dad-9f96-b7a4ed86f77b", "version": 2, "type": "text", "properties": { "title": [["The software library I wrote, NithDMIs, contains several modules capable of interpreting the input and easily developing applications in C#. So far, I haven't written libraries for other languages, but I'm confident that the communication standard is very simple, and it should be equally simple to write input interpreters for other languages."]] }, "created_time": 1712148027139, "last_edited_time": 1712148027148, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "68df8e29-6ae0-4cd6-86e1-e97fdd4a5c21": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "68df8e29-6ae0-4cd6-86e1-e97fdd4a5c21", "version": 44, "type": "external_object_instance", "format": { "uri": "https://github.com/Neeqstock", "stale": false, "bot_id": "614edcd2-851a-4c87-9fa5-ecafbb9e53c3", "attributes": [{ "id": "title", "name": "Login", "type": "inline", "format": { "type": "title", "section": "title" }, "values": ["Neeqstock"] }, { "id": "avatar_url", "name": "Avatar URL", "type": "embed", "format": { "type": "icon", "section": "entity" }, "values": ["https://avatars.githubusercontent.com/u/15343295?v=4"], "mimeType": "image/*" }], "external_object_id": "2ebcabf3-a10c-4679-a9dc-d725a4d8d8cd" }, "created_time": 1666270620000, "last_edited_time": 1748392937097, "parent_id": "43e47d71-26d7-4ca9-83fe-d2c714a5bf8d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "c07942e8-5895-4bd1-9b7d-0fa0e189e625": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "c07942e8-5895-4bd1-9b7d-0fa0e189e625", "version": 7, "type": "column", "content": ["5dd28756-0dc3-4077-9fa5-99fd6e81414f"], "format": { "column_ratio": 0.3125 }, "created_time": 1712149210920, "last_edited_time": 1712149220921, "parent_id": "3c1943fe-e401-4591-868c-26692aa1699c", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "85a2bd95-71e5-4e51-833c-03e039b79180": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "85a2bd95-71e5-4e51-833c-03e039b79180", "version": 11, "type": "column", "content": ["206b252a-ddda-4991-bc55-c7b9acf8b96d"], "format": { "column_ratio": 0.6875 }, "created_time": 1712149210920, "last_edited_time": 1712152079085, "parent_id": "3c1943fe-e401-4591-868c-26692aa1699c", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "5dd28756-0dc3-4077-9fa5-99fd6e81414f": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "5dd28756-0dc3-4077-9fa5-99fd6e81414f", "version": 21, "type": "image", "properties": { "size": [["553.1KB"]], "title": [["Untitled"]], "source": [["https://prod-files-secure.s3.us-west-2.amazonaws.com/aeac5776-d5a4-4228-96d3-63f8b36740f8/67a9e33d-7648-4278-9d63-28b0c3a795f7/Untitled.png"]] }, "format": { "block_width": 480, "display_source": "https://prod-files-secure.s3.us-west-2.amazonaws.com/aeac5776-d5a4-4228-96d3-63f8b36740f8/67a9e33d-7648-4278-9d63-28b0c3a795f7/Untitled.png", "block_full_width": false, "block_page_width": true, "block_aspect_ratio": 1.2617874736101338, "block_preserve_scale": true }, "created_time": 1712148566454, "last_edited_time": 1712149896798, "parent_id": "c07942e8-5895-4bd1-9b7d-0fa0e189e625", "parent_table": "block", "alive": true, "file_ids": ["67a9e33d-7648-4278-9d63-28b0c3a795f7"], "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "206b252a-ddda-4991-bc55-c7b9acf8b96d": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "version": 44, "type": "table", "content": ["69e7270e-2317-4a81-b7a7-5d822f7335cf", "44231e9b-87dc-4e26-b032-4ad23cbfe391", "6e64e3ed-d7d0-4f07-be46-364c18736561", "ea98e7c6-e15a-49e4-a735-ee812427996b", "2a598a44-e787-4770-8b49-9f6f57e71340", "26ce6643-68f0-4be4-bbe9-21d861b409bd", "10f901d8-df28-4336-bec7-810f9be404eb", "fb9ad03a-f534-4532-acf5-a12243bc495d", "20a93a3d-fcd1-45b8-a6be-7ffb80fe0656", "e3374d69-f7ff-4f69-a50a-be7ae20b6038", "a5dbb579-b9c0-4547-b371-1c226e894c4a", "d8da790c-0eb3-4ec6-b0b3-f93026fda7da", "90bd2d26-5e9f-47c1-a74d-6dabc8763199", "018bf2f1-82dc-4ac2-b0e9-4bc57fc030f2", "726254e7-ed5d-451f-bf01-fea37771af33"], "format": { "table_block_column_order": ["wMR=", "g>Iv", "w^of", "jxd["], "table_block_column_format": { "g>Iv": { "width": 310 }, "jxd[": { "width": 194.3125 } }, "table_block_column_header": true }, "created_time": 1712148972666, "last_edited_time": 1712149894229, "parent_id": "85a2bd95-71e5-4e51-833c-03e039b79180", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "69e7270e-2317-4a81-b7a7-5d822f7335cf": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "69e7270e-2317-4a81-b7a7-5d822f7335cf", "version": 163, "type": "table_row", "properties": { "g>Iv": [["Description"]], "jxd[": [["Alternatives"]], "wMR=": [["Channel"]], "w^of": [["NithSensors"]] }, "created_time": 1712149312335, "last_edited_time": 1712149371399, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "44231e9b-87dc-4e26-b032-4ad23cbfe391": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "44231e9b-87dc-4e26-b032-4ad23cbfe391", "version": 294, "type": "table_row", "properties": { "g>Iv": [["Point on screen where the user is looking at"]], "jxd[": [["Eye Trackers (e.g. Tobii)"]], "wMR=": [["Gaze pointing", [["h", "blue"], ["b"]]]], "w^of": [["-"]] }, "created_time": 1712148972666, "last_edited_time": 1712149601903, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "6e64e3ed-d7d0-4f07-be46-364c18736561": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "6e64e3ed-d7d0-4f07-be46-364c18736561", "version": 307, "type": "table_row", "properties": { "g>Iv": [["Eyelid aperture"]], "jxd[": [["Eye Trackers (e.g. Tobii)"]], "wMR=": [["Blinking", [["h", "blue"], ["b"]]]], "w^of": [["‣", [["p", "ee58e40a-3d13-49c8-a43c-af9fd577be10", "aeac5776-d5a4-4228-96d3-63f8b36740f8"]]], [" "]] }, "created_time": 1712148972666, "last_edited_time": 1717765523758, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "ea98e7c6-e15a-49e4-a735-ee812427996b": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "ea98e7c6-e15a-49e4-a735-ee812427996b", "version": 178, "type": "table_row", "properties": { "g>Iv": [["Up and down movement of eyebrows"]], "wMR=": [["Eyebrow movements", [["h", "blue"], ["b"]]]], "w^of": [["‣", [["p", "ee58e40a-3d13-49c8-a43c-af9fd577be10", "aeac5776-d5a4-4228-96d3-63f8b36740f8"]]], [" "]] }, "created_time": 1712148972666, "last_edited_time": 1717765539794, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "2a598a44-e787-4770-8b49-9f6f57e71340": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "2a598a44-e787-4770-8b49-9f6f57e71340", "version": 128, "type": "table_row", "properties": { "g>Iv": [["Pitch, intensity, others"]], "jxd[": [["Microphones + algorithms"]], "wMR=": [["Voice", [["h", "teal"], ["b"]]]], "w^of": [["-"]] }, "created_time": 1712149062161, "last_edited_time": 1712149690351, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "26ce6643-68f0-4be4-bbe9-21d861b409bd": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "26ce6643-68f0-4be4-bbe9-21d861b409bd", "version": 135, "type": "table_row", "properties": { "g>Iv": [["Pitch, intensity, others"]], "jxd[": [["Microphones + algorithms"]], "wMR=": [["Whistling", [["h", "teal"], ["b"]]]], "w^of": [["-"]] }, "created_time": 1712149063000, "last_edited_time": 1712149698886, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "10f901d8-df28-4336-bec7-810f9be404eb": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "10f901d8-df28-4336-bec7-810f9be404eb", "version": 150, "type": "table_row", "properties": { "g>Iv": [["Breath pressure"]], "jxd[": [["Sip-n-puff peripherals"]], "wMR=": [["Breath", [["h", "teal"], ["b"]]]], "w^of": [["‣", [["p", "b23a4340-6b4d-432d-974a-42bbe0f63695", "aeac5776-d5a4-4228-96d3-63f8b36740f8"]]], [" "]] }, "created_time": 1712149064250, "last_edited_time": 1717765548074, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "fb9ad03a-f534-4532-acf5-a12243bc495d": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "fb9ad03a-f534-4532-acf5-a12243bc495d", "version": 192, "type": "table_row", "properties": { "g>Iv": [["Mouth aperture, lips positioning"]], "wMR=": [["Mouth-lip movements", [["h", "teal"], ["b"]]]], "w^of": [["‣", [["p", "ee58e40a-3d13-49c8-a43c-af9fd577be10", "aeac5776-d5a4-4228-96d3-63f8b36740f8"]]], [" "]] }, "created_time": 1712149065147, "last_edited_time": 1717765563171, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "20a93a3d-fcd1-45b8-a6be-7ffb80fe0656": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "20a93a3d-fcd1-45b8-a6be-7ffb80fe0656", "version": 113, "type": "table_row", "properties": { "g>Iv": [["3D movement of tongue"]], "wMR=": [["Tongue movement", [["h", "teal"], ["b"]]]], "w^of": [["-"]] }, "created_time": 1712149068376, "last_edited_time": 1712149743365, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "e3374d69-f7ff-4f69-a50a-be7ae20b6038": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "e3374d69-f7ff-4f69-a50a-be7ae20b6038", "version": 164, "type": "table_row", "properties": { "g>Iv": [["Pressure, jaw movement"]], "wMR=": [["Teeth", [["h", "teal"], ["b"]]]], "w^of": [["‣", [["p", "d0dabadc-9abe-470e-b583-985b22f3d2a9", "aeac5776-d5a4-4228-96d3-63f8b36740f8"]]], [" "]] }, "created_time": 1712149069227, "last_edited_time": 1717765592114, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "a5dbb579-b9c0-4547-b371-1c226e894c4a": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "a5dbb579-b9c0-4547-b371-1c226e894c4a", "version": 168, "type": "table_row", "properties": { "g>Iv": [["Rotation, position"]], "jxd[": [["Commercial Head Trackers"]], "wMR=": [["Head movements", [["h", "red"], ["b"]]]], "w^of": [["‣", [["p", "eda9cb4d-752c-4586-9abd-85d06a1d7e5d", "aeac5776-d5a4-4228-96d3-63f8b36740f8"]]], [" "]] }, "created_time": 1712149069974, "last_edited_time": 1717765609162, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "d8da790c-0eb3-4ec6-b0b3-f93026fda7da": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "d8da790c-0eb3-4ec6-b0b3-f93026fda7da", "version": 107, "type": "table_row", "properties": { "g>Iv": [["Tension of neck muscles"]], "jxd[": [["EMG sensors"]], "wMR=": [["Neck tension", [["b"], ["h", "red"]]]], "w^of": [["-"]] }, "created_time": 1712149102219, "last_edited_time": 1712149768046, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "90bd2d26-5e9f-47c1-a74d-6dabc8763199": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "90bd2d26-5e9f-47c1-a74d-6dabc8763199", "version": 286, "type": "table_row", "properties": { "g>Iv": [["Relaxation, emotions., etc. (passive channel)"]], "jxd[": [["EEG (e.g. Emotiv)"]], "wMR=": [["Mental states", [["h", "yellow"], ["b"]]]], "w^of": [["-"]] }, "created_time": 1712149108359, "last_edited_time": 1712149802046, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "018bf2f1-82dc-4ac2-b0e9-4bc57fc030f2": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "018bf2f1-82dc-4ac2-b0e9-4bc57fc030f2", "version": 119, "type": "table_row", "properties": { "g>Iv": [["Brain signals elicited by visual cortex"]], "jxd[": [["EEG (e.g. Emotiv)"]], "wMR=": [["Attention", [["h", "yellow"], ["b"]]]], "w^of": [["-"]] }, "created_time": 1712149117785, "last_edited_time": 1712149879430, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "726254e7-ed5d-451f-bf01-fea37771af33": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "726254e7-ed5d-451f-bf01-fea37771af33", "version": 87, "type": "table_row", "properties": { "g>Iv": [["Immagination of movements, etc."]], "jxd[": [["EEG (e.g. Emotiv)"]], "wMR=": [["Imagery", [["h", "yellow"], ["b"]]]], "w^of": [["-"]] }, "created_time": 1712149123466, "last_edited_time": 1712149829606, "parent_id": "206b252a-ddda-4991-bc55-c7b9acf8b96d", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1fcde568-44cd-807e-b6c7-db623e01752a": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1fcde568-44cd-807e-b6c7-db623e01752a", "version": 3, "type": "text", "created_time": 1748014882617, "last_edited_time": 1748014882627, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "33098bc2-dfd2-454a-be8a-721e95c5d5f3": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "33098bc2-dfd2-454a-be8a-721e95c5d5f3", "version": 82, "type": "sub_sub_header", "properties": { "title": [["UDP ports partitioning"]] }, "created_time": 1712257416124, "last_edited_time": 1748014892282, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1fcde568-44cd-8010-9b88-ea32511c5e3f": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1fcde568-44cd-8010-9b88-ea32511c5e3f", "version": 211, "type": "text", "properties": { "title": [["Below is a table of standard UDP ports used by the various NITHsensors and NITHwrappers."]] }, "created_time": 1748014892696, "last_edited_time": 1748015067456, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1fcde568-44cd-8095-aeff-c9f22810bd69": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1fcde568-44cd-8095-aeff-c9f22810bd69", "version": 235, "type": "text", "properties": { "title": [["Input ports are from 20100 to 20999.\nOutput ports are from 21100 to 21999."]] }, "created_time": 1748015067654, "last_edited_time": 1748015213589, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1fcde568-44cd-8037-aeec-c27416dcebc5": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1fcde568-44cd-8037-aeec-c27416dcebc5", "version": 13, "type": "table", "content": ["1fcde568-44cd-80bc-a79d-f89d024573ca", "1fcde568-44cd-8058-8e20-d5d3a27c81a0", "1fcde568-44cd-8033-99a3-c9124f68d257", "1fcde568-44cd-8001-9b81-d9e5cc33f4a1", "1fcde568-44cd-805e-a8c5-f23a6c2c7276", "1fcde568-44cd-8067-a9dd-e04223622065"], "format": { "table_block_column_order": ["gKXn", "McM@", "dThW"] }, "created_time": 1748014912748, "last_edited_time": 1748015027758, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1fcde568-44cd-80d4-a782-f5f976780499": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1fcde568-44cd-80d4-a782-f5f976780499", "version": 3, "type": "text", "created_time": 1748015040910, "last_edited_time": 1748015040915, "parent_id": "56ab43db-493a-423f-9e88-23af04fa9c46", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1fcde568-44cd-80bc-a79d-f89d024573ca": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1fcde568-44cd-80bc-a79d-f89d024573ca", "version": 101, "type": "table_row", "properties": { "McM@": [["Input Port", [["b"], ["h", "yellow_background"]]]], "dThW": [["Output port", [["b"], ["h", "pink_background"]]]], "gKXn": [["Sensor/Wrapper", [["b"], ["h", "blue_background"]]]] }, "created_time": 1748014912748, "last_edited_time": 1748015168469, "parent_id": "1fcde568-44cd-8037-aeec-c27416dcebc5", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1fcde568-44cd-8058-8e20-d5d3a27c81a0": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1fcde568-44cd-8058-8e20-d5d3a27c81a0", "version": 47, "type": "table_row", "properties": { "McM@": [["20100"]], "gKXn": [["‣", [["p", "ee58e40a-3d13-49c8-a43c-af9fd577be10", "aeac5776-d5a4-4228-96d3-63f8b36740f8"]]], [" "]] }, "created_time": 1748014912748, "last_edited_time": 1748015171385, "parent_id": "1fcde568-44cd-8037-aeec-c27416dcebc5", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1fcde568-44cd-8033-99a3-c9124f68d257": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1fcde568-44cd-8033-99a3-c9124f68d257", "version": 98, "type": "table_row", "properties": { "McM@": [["20101"]], "gKXn": [["NITHbeamWrapper"]] }, "created_time": 1748014912748, "last_edited_time": 1748015174283, "parent_id": "1fcde568-44cd-8037-aeec-c27416dcebc5", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1fcde568-44cd-8001-9b81-d9e5cc33f4a1": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1fcde568-44cd-8001-9b81-d9e5cc33f4a1", "version": 59, "type": "table_row", "properties": { "McM@": [["20102"]], "gKXn": [["NITHtobiasWrapper"]] }, "created_time": 1748015004823, "last_edited_time": 1748015177051, "parent_id": "1fcde568-44cd-8037-aeec-c27416dcebc5", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1fcde568-44cd-805e-a8c5-f23a6c2c7276": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1fcde568-44cd-805e-a8c5-f23a6c2c7276", "version": 98, "type": "table_row", "properties": { "McM@": [["20103"]], "dThW": [["21103"]], "gKXn": [["NITHphoneWrapper"]] }, "created_time": 1748015014833, "last_edited_time": 1748015184036, "parent_id": "1fcde568-44cd-8037-aeec-c27416dcebc5", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } }, "1fcde568-44cd-8067-a9dd-e04223622065": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1fcde568-44cd-8067-a9dd-e04223622065", "version": 69, "type": "table_row", "properties": { "McM@": [["20104"]], "gKXn": [["NITHgazePointWrapper"]] }, "created_time": 1748015027757, "last_edited_time": 1748015178168, "parent_id": "1fcde568-44cd-8037-aeec-c27416dcebc5", "parent_table": "block", "alive": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } } }, "custom_emoji": { "1a0de568-44cd-806f-9fbd-007a23fccb46": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "1a0de568-44cd-806f-9fbd-007a23fccb46", "version": 1, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "name": "nith_white", "url": "https://s3-us-west-2.amazonaws.com/public.notion-static.com/75df459d-db78-45b6-9119-67ec9739c3cc/NithLogo_White_Trace.png", "created_time": 1740063879452, "created_by_id": "4642ed97-8102-4001-be87-8d5c224cf192", "created_by_table": "notion_user", "alive": true }, "role": "reader" } } }, "collection_view": { "c9f13ccc-8d0a-485c-a112-e8c95fbf103b": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "c9f13ccc-8d0a-485c-a112-e8c95fbf103b", "version": 9, "type": "gallery", "format": { "table_wrap": true, "gallery_cover": { "type": "page_content" }, "table_properties": [{ "width": 276, "visible": true, "property": "title" }, { "visible": true, "property": "SraQ" }], "collection_pointer": { "id": "0505eec7-d7d8-475b-96ce-916ca83315c4", "table": "collection", "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "gallery_properties": [{ "visible": true, "property": "title" }, { "visible": true, "property": "SraQ" }, { "visible": true, "property": "DqDa" }], "hide_linked_collection_name": true }, "parent_id": "08c3e738-cd11-4968-a6e0-8e27b7e21907", "parent_table": "block", "alive": true, "page_sort": ["b23a4340-6b4d-432d-974a-42bbe0f63695", "eda9cb4d-752c-4586-9abd-85d06a1d7e5d", "d0dabadc-9abe-470e-b583-985b22f3d2a9", "ee58e40a-3d13-49c8-a43c-af9fd577be10"], "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } } }, "collection": { "0505eec7-d7d8-475b-96ce-916ca83315c4": { "spaceId": "aeac5776-d5a4-4228-96d3-63f8b36740f8", "value": { "value": { "id": "0505eec7-d7d8-475b-96ce-916ca83315c4", "version": 39, "name": [["NITHsensors"]], "schema": { "DqDa": { "name": "Cost (approx.)", "type": "number", "number_format": "euro" }, "SraQ": { "name": "Interaction channels", "type": "multi_select", "options": [{ "id": "2f4a2f91-66aa-4739-9a5c-8f5ebb148577", "color": "green", "value": "Breath pressure", "collectionIds": ["0505eec7-d7d8-475b-96ce-916ca83315c4"] }, { "id": "a8b39e6b-8a0d-4163-a2ba-b6c96b2249cb", "color": "red", "value": "Head rotation", "collectionIds": ["0505eec7-d7d8-475b-96ce-916ca83315c4"] }, { "id": "775d2985-d42a-4151-b061-3c7a2ccea6b6", "color": "purple", "value": "Bite pressure", "collectionIds": ["0505eec7-d7d8-475b-96ce-916ca83315c4"] }, { "id": "32d4ed01-9c25-45af-96ed-77f7bc9c9c5d", "color": "default", "value": "Blinking", "collectionIds": ["0505eec7-d7d8-475b-96ce-916ca83315c4"] }, { "id": "01c94ab4-62ec-4c36-aba8-8e16e6d7a0e5", "color": "yellow", "value": "Eye aperture", "collectionIds": ["0505eec7-d7d8-475b-96ce-916ca83315c4"] }, { "id": "9b6479df-9255-4b51-b91b-d9f7fb9d0954", "color": "orange", "value": "Mouth aperture", "collectionIds": ["0505eec7-d7d8-475b-96ce-916ca83315c4"] }] }, "dSNT": { "name": "Building difficulty", "type": "number", "show_as": { "type": "bar", "color": "green", "maxValue": 5, "showValue": true } }, "title": { "name": "Name", "type": "title" } }, "format": { "ai_suggested_properties": [{ "name": "Location", "type": "text" }, { "name": "Website", "type": "url" }, { "name": "Email", "type": "email" }, { "name": "Contact Number", "type": "phone_number" }, { "name": "Active", "type": "checkbox" }, { "name": "Owner", "type": "person" }, { "name": "Data File", "type": "file" }, { "name": "Status", "type": "status" }, { "name": "Quantity", "type": "number" }, { "name": "Last Updated", "type": "date" }], "collection_page_properties": [{ "visible": true, "property": "SraQ" }] }, "parent_id": "08c3e738-cd11-4968-a6e0-8e27b7e21907", "parent_table": "block", "alive": true, "migrated": true, "space_id": "aeac5776-d5a4-4228-96d3-63f8b36740f8" }, "role": "reader" } } } }, "cursors": [] })</script>
+    <script>__notion_html_async.push("requiredRedirectMetadata", { "pageId": "56ab43db-493a-423f-9e88-23af04fa9c46", "requiresRedirect": false })</script>
+    <script>__notion_html_async.push(null, null)</script>
+</body>
+
+</html>

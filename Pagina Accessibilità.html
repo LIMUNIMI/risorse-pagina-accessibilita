@@ -163,7 +163,7 @@
                 <strong>Netytar</strong> to the accessible DJing software <strong>DJeye</strong>. At the core of this
                 work is the <strong>NITH Framework</strong>, an open-source ecosystem of hardware and software we
                 developed to drastically simplify and accelerate the creation of new accessible applications. By
-                focusing on low-cost, DIY hardware and modular, reusable software, the NITH framework provides a
+                focusing on low-cost or DIY Open-Source hardware and modular software, the NITH framework provides a
                 foundation for rapid prototyping and deep customization, enabling the creation of systems tailored to
                 the unique needs and abilities of each user.
             </p>
@@ -178,8 +178,8 @@
 
             <div id="general-demos" class="indented-section">
                 <h3>General Demos</h3>
-                <p>Watch this video for a general demonstration of the accessible instruments in action.</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/owJE9MXFDjo"
+                <p>Watch this video for a general demonstration of the accessible instruments in action.</p> <iframe
+                    width="560" height="315" src="https://www.youtube.com/embed/owJE9MXFDjo?si=-VNUtbOof_m9CELj"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -188,9 +188,12 @@
             <div id="netytar" class="indented-section">
                 <h3>Netytar</h3>
                 <p>Netytar is a gaze-controlled digital instrument designed for individuals with severe motor
-                    disabilities. It allows users to play melodies and chords using only their eye movements, offering a
-                    high degree of expressiveness.</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Jf-_LkFmhbQ"
+                    disabilities. It allows users to play monophonic melodies using their eye movements for note
+                    selection and breath for dynamic control, offering a high degree of expressiveness.</p>
+                <img src="https://raw.githubusercontent.com/LIMUNIMI/risorse-pagina-accessibilita/refs/heads/main/resources/Netytar.webp"
+                    alt="Netytar Interface" width="560" height="auto">
+                <cite>The Netytar interface showing the gaze-controlled note layout.</cite><iframe width="560"
+                    height="315" src="https://www.youtube.com/embed/Jf-_LkFmhbQ?si=G0vfKBaLr52nZX5P"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -212,7 +215,7 @@
                 </ul>
                 <p><strong>Links:</strong></p>
                 <ul>
-                    <li><a href="https://github.com/Neeqstock/Netytar-amd" target="_blank">GitHub Repository</a></li>
+                    <li><a href="https://github.com/LIMUNIMI/Netytar" target="_blank">GitHub Repository</a></li>
                 </ul>
             </div>
 
@@ -221,7 +224,10 @@
                 <p>Netychords is an accessible digital musical instrument that enables users to play chords and melodies
                     using gaze control and other interaction channels. It is designed to be highly customizable to suit
                     the abilities of each user.</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/D18603o46ho"
+                <img src="https://raw.githubusercontent.com/LIMUNIMI/risorse-pagina-accessibilita/refs/heads/main/resources/Netychords.png"
+                    alt="Netychords Interface" width="560" height="auto">
+                <cite>The Netychords interface for chord-based musical performance.</cite><iframe width="560"
+                    height="315" src="https://www.youtube.com/embed/D18603o46ho?si=m16dwj9b5LIBp8Kf"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -237,31 +243,40 @@
                         progressions.</li>
                     <li><strong>Visual Feedback:</strong> The interface provides clear visual cues for chord selection
                         and playback.</li>
+                    <li><strong>Multiple Layouts:</strong> Netychords offers various chord layouts, including the
+                        Stradella system (inspired by accordions) and the Flowerpot layout, to accommodate different
+                        musical styles and user preferences.</li>
                 </ul>
                 <p><strong>Links:</strong></p>
                 <ul>
-                    <li><a href="https://github.com/L-I-M/Netychords-amd" target="_blank">GitHub Repository</a></li>
+                    <li><a href="https://github.com/LIMUNIMI/Netychords" target="_blank">GitHub Repository</a></li>
                 </ul>
             </div>
 
             <div id="resin" class="indented-section">
                 <h3>Resin</h3>
-                <p>Resin (REal-time Synth) is a modular synthesizer controlled by head movements, designed for users
+                <p>Resin is a monophonic Accessible Digital Musical Instrument (ADMI) that functions as a MIDI musical
+                    interface, designed for users
                     with motor disabilities. It allows for the creation of complex and evolving soundscapes through
-                    intuitive head motions.</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/fB-MRQ6_yR4"
-                    title="YouTube video player" frameborder="0"
+                    intuitive head motions and vocal tract shape.</p> <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/fB-MRQ6_yR4?si=IoPxdsGPVgTVMfbn" title="YouTube video player"
+                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <h4>How it Works</h4>
-                <p>The user wears a head-mounted inertial measurement unit (IMU) like the NITHheadTracker. The yaw,
-                    pitch, and roll of the head are mapped to various synthesis parameters, such as filter cutoff,
+                <p>Resin uses two main interaction channels. Head movement along the horizontal axis (yaw) is used to
+                    control note onset and dynamics (MIDI Pressure, Velocity, Note On/Off). The shape of the user's
+                    vocal tract, detected through its acoustic resonances (formants), is used to control the note's
+                    pitch. The user wears a head-mounted inertial measurement unit (IMU) like the NITHheadTracker. The
+                    yaw, pitch, and roll of the head are mapped to various synthesis parameters, such as filter cutoff,
                     resonance, and oscillator frequency. This direct mapping allows for real-time, expressive control
                     over the sound.</p>
                 <h4>Features</h4>
                 <ul>
                     <li><strong>Head-Controlled Synthesis:</strong> Direct and intuitive mapping of head movements to
                         sound parameters.</li>
+                    <li><strong>Vocal Tract Resonance Control:</strong> An innovative interaction method where the shape
+                        of the mouth influences the pitch.</li>
                     <li><strong>Modular Design:</strong> The synthesis engine is modular, allowing users to create their
                         own custom synth patches.</li>
                     <li><strong>Low-Cost and Accessible:</strong> Built using affordable hardware and open-source
@@ -269,31 +284,38 @@
                 </ul>
                 <p><strong>Links:</strong></p>
                 <ul>
-                    <li><a href="https://github.com/Neeqstock/Resin" target="_blank">GitHub Repository</a></li>
+                    <li><a href="https://github.com/LIMUNIMI/Resin" target="_blank">GitHub Repository</a></li>
                 </ul>
             </div>
 
             <div id="kiroll" class="indented-section">
                 <h3>Kiroll</h3>
-                <p>Kiroll is a software application designed to emulate a MIDI keyboard using head rotation. It allows
-                    users to play notes and chords on any standard digital audio workstation (DAW) or virtual instrument
-                    without using their hands.</p>
+                <p>Kiroll is an affordable and open-source software ADMI specifically
+                    designed for quadriplegic users. It can be played by motor-impaired users through eye gaze for note
+                    selection and breath for sound control.</p>
                 <h4>How it Works</h4>
-                <p>Kiroll uses a head tracker (like the NITHheadTracker) to capture head movements. The roll axis of the
-                    head is mapped to the keys of a virtual piano keyboard. Rolling the head left or right selects
-                    different notes, and a separate mechanism (like a switch or a blink) is used to trigger the
-                    note-on/note-off events.</p>
+                <p>Kiroll features an innovative "infinite keyboards" context-switching interaction method. The
+                    interface displays multiple parallel, vertically-arranged keyboards that scroll horizontally. The
+                    musician selects a key on the leftmost keyboard with their gaze and then blows into a breath sensor
+                    (like the NITHbreathSensor) to play the note. To play the next note, the user shifts their gaze to a
+                    key on the adjacent keyboard. This design avoids the "Midas Touch" problem common in gaze-based
+                    interfaces, where unintentional notes are triggered as the gaze moves across the screen. The
+                    interface automatically scrolls, allowing for a seamless and continuous playing experience, similar
+                    to reading a musical staff.</p>
                 <h4>Features</h4>
                 <ul>
-                    <li><strong>Head-based Keyboard Emulation:</strong> Control a virtual MIDI keyboard with head
-                        movements.</li>
-                    <li><strong>DAW Integration:</strong> Works with any software that accepts MIDI input.</li>
-                    <li><strong>Customizable Mapping:</strong> The sensitivity and range of the head-to-key mapping can
-                        be adjusted.</li>
+                    <li><strong>Gaze-based Note Selection with Breath Control:</strong> An intuitive interaction
+                        paradigm that separates note selection from sound production.</li>
+                    <li><strong>Infinite Keyboards and Autoscrolling:</strong> An endlessly scrolling layout that
+                        resolves the Midas Touch issue and allows for continuous play.</li>
+                    <li><strong>Customizable Interface:</strong> Users can adjust the musical scale, octave, and the
+                        distance between keyboards.</li>
+                    <li><strong>Open-Source:</strong> Kiroll and its source code are available under a GNU GPL-v3
+                        license.</li>
                 </ul>
                 <p><strong>Links:</strong></p>
                 <ul>
-                    <li><a href="https://github.com/Neeqstock/Kiroll" target="_blank">GitHub Repository</a></li>
+                    <li><a href="https://github.com/LIMUNIMI/Kiroll" target="_blank">GitHub Repository</a></li>
                 </ul>
             </div>
 
@@ -302,11 +324,9 @@
                 <p>DJeye is an innovative, accessible musical interface designed for DJing, addressing the challenge
                     that this activity poses for individuals with limited motor capabilities like quadriplegia. The
                     system is a software-based musical interface controlled by eye tracking, which allows for typical DJ
-                    mixing operations.</p>
-                <img src="https://i.imgur.com/KqW42gM.png" alt="DJeye Interface Screenshot">
-                <cite>The DJeye Interface, showing the two decks and central controls.</cite>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/-bs08Ohdr7w?si=7_VqKjMEZUqbhM_t"
-                    title="YouTube video player" frameborder="0"
+                    mixing operations.</p><iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/-bs08Ohdr7w?si=GiCkn4RONwiUbmtO" title="YouTube video player"
+                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <h4>How it Works</h4>
@@ -335,7 +355,8 @@
                 <p><strong>Links:</strong></p>
                 <ul>
                     <li><a href="https://github.com/LIMUNIMI/DJeye" target="_blank">GitHub Repository</a></li>
-                    <li><a href="https://youtu.be/-bs08Ohdr7w" target="_blank">YouTube Demo Video</a></li>
+                    <li><a href="https://youtu.be/-bs08Ohdr7w?si=GiCkn4RONwiUbmtO" target="_blank">YouTube Demo
+                            Video</a></li>
                 </ul>
             </div>
         </section>
@@ -344,42 +365,233 @@
 
         <section id="installation-tutorials">
             <h2>Installation Tutorials</h2>
-            <p>Specific video tutorials for installation are not available at this time. Please refer to the README
-                files in the official GitHub repositories for detailed installation and setup instructions.</p>
-
+            <div class="indented-section">
+                <h3>NITH Framework Installation and Usage</h3>
+                <p>This video tutorial provides a comprehensive guide to installing and using the NITH framework,
+                    including setting up the sensors and software components.</p>
+                <iframe width="560" height="315" src="https://youtu.be/cuS3y8yHozM?si=mEchFY_DPxdHj_5s"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
             <div class="indented-section">
                 <h3>Netytar, Netychords, Resin, Kiroll, and DJeye</h3>
-                <p>For installation instructions, please visit the GitHub repository for each instrument, linked in
-                    their respective sections above. The `README.md` file in each repository provides the necessary
-                    steps to get the software running.</p>
+                <p>For detailed installation instructions, please refer to the README files in the official GitHub
+                    repositories for each instrument, linked in their respective sections above. The `README.md` file in
+                    each repository provides the necessary steps to get the software running.</p>
             </div>
         </section>
 
         <hr>
-
-
         <section id="nith-framework">
             <h2>The NITH Framework</h2>
-            <p>The NITH framework is a modular platform for designing and prototyping accessible human–computer
+            <p>The NITH framework is a comprehensive software and hardware ecosystem designed to facilitate the
+                development of accessible applications for users with quadriplegia and other hand impairments. It offers
+                a collection of sensory peripherals, software tools, and libraries that support a wide range of
+                interaction channels, such as eye, head, and tongue movements, as well as voice, breath, and facial
+                gestures.</p>
+
+            <p>The framework is a modular platform for designing and prototyping accessible human–computer
                 interaction systems tailored for users with disabilities that impair the use of hands and feet as means
                 of interaction. It is built on the core principles of <strong>simplicity, modularity, and
                     affordability</strong> to empower developers, caregivers, and users themselves.</p>
-            <p>The framework strongly adheres to an <strong>open-source philosophy</strong> and the <strong>KISS (Keep
-                    It Simple, Stupid) principle</strong>. All software is released under open-source licenses, and all
-                hardware designs for our sensory peripherals are released under free licenses. The peripherals are
-                designed to be easily assembled using common, readily available components and open-source hardware
-                boards like Arduino.</p>
-            <img src="https://i.imgur.com/rLgP00N.png" alt="NITH framework logo" style="max-width: 200px;">
+
+            <img src="https://raw.githubusercontent.com/LIMUNIMI/risorse-pagina-accessibilita/refs/heads/main/resources/NithLogo_White_Trace.png"
+                alt="NITH framework logo" style="max-width: 200px;" width="560" height="auto">
             <cite>The NITH framework logo.</cite>
-            <p>Our primary goals with the NITH framework are to:</p>
+
+            <h3>Philosophy</h3>
+            <p>NITHsensors designs were developed with a specific philosophy in mind:</p>
             <ul>
-                <li>Develop a comprehensive collection of peripherals that encompass multiple interaction channels.</li>
-                <li>Facilitate rapid prototyping for software applications specifically designed for quadriplegic users.
-                </li>
-                <li>Provide a user-friendly and convenient framework for human-machine interaction.</li>
-                <li>Offer a structured approach for creating new sensory peripherals with a standard communication
-                    protocol.</li>
+                <li><strong>Affordability:</strong> All hardware designs use common, readily available components</li>
+                <li><strong>Accessibility:</strong> No specialized manufacturing skills required for assembly</li>
+                <li><strong>Open Source:</strong> All software released under open-source licenses and hardware designs
+                    under free licenses</li>
+                <li><strong>KISS Principle:</strong> Keep It Simple, Stupid - emphasizing simplicity in design and
+                    implementation</li>
+                <li><strong>Modularity:</strong> Standard communication protocol allows easy integration and
+                    customization</li>
             </ul>
+
+            <h3>Uses and Applications</h3>
+            <p>The NITHsensors are a product of research into developing accessible musical instruments for individuals
+                with quadriplegia. The instruments are operated by NITHsensors alone or in combination with other
+                commercially available peripherals. However, as music is not the only important aspect of human-machine
+                interaction — there's
+                potential for using these solutions in other contexts, such as developing applications for general
+                computer accessibility.</p>
+
+            <h3>Interaction Channels Overview</h3>
+            <p>Below is a summary table, indicating which channels are already detectable with NITHsensors devices
+                and/or with commercial alternatives:</p>
+
+            <img src="https://raw.githubusercontent.com/LIMUNIMI/risorse-pagina-accessibilita/refs/heads/main/resources/InteractionChannels_ABCD.png"
+                alt="Alternative interaction channels diagram" width="560" height="auto">
+            <cite>The areas in which we subdivided the various interaction channels (A: Eyes, B: Mouth, C: Head, D:
+                Brain) used in accessible digital musical instruments.</cite>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 2em 0;">
+                <thead>
+                    <tr style="background-color: #f5f5f5;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Region</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Parameter</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Description</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">NITHsensors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;" rowspan="12"><strong>Eyes</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Left Eye Aperture</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Continuous measure of how open the left eye is
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Right Eye Aperture</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Continuous measure of how open the right eye
+                            is</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Left Eye Status</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Boolean indicating if the left eye is open or
+                            closed</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper (+ postprocessor)</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Right Eye Status</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Boolean indicating if the right eye is open or
+                            closed</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper (+ postprocessor)</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Left Eye Position</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">3D position of the left eye in space</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Right Eye Position</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">3D position of the right eye in space</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Left Eyebrow Height</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Height of the left eyebrow</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Right Eyebrow Height</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Height of the right eyebrow</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Left Eyebrow Phase</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Phase of the left eyebrow (down, neutral, up)
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper (+ preprocessor)</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Right Eyebrow Phase</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Phase of the right eyebrow (down, neutral, up)
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper (+ preprocessor)</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Gaze Coordinates</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">X and Y coordinates of the user's gaze on the
+                            screen</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHbeamWrapper</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Gaze Presence</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Boolean indicating if gaze is being detected
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHbeamWrapper</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;" rowspan="8"><strong>Mouth</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Voice Pitch</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Voice pitch frequency</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Voice Intensity</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Voice intensity (volume)</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Whistle Pitch</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Whistle pitch (frequency)</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Whistle Intensity</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Whistle intensity (volume)</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Breath Pressure</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Air pressure from breathing or blowing</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHbreathSensor</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Mouth Aperture</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Continuous measure of how open the mouth is
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Mouth Status</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Boolean indicating if the mouth is open or
+                            closed</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper (+ preprocessor)</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Teeth Pressure</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Pressure from teeth clenching or jaw movement
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHbiteSensor</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;" rowspan="3"><strong>Head</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Head Presence</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Boolean indicating if a head is being detected
+                        </td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHwebcamWrapper</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Head Position</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Head rotation (yaw, pitch, roll)</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHheadTracker, NITHwebcamWrapper</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Head Acceleration</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Head rotational acceleration (yaw, pitch,
+                            roll)</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">NITHheadTracker, NITHwebcamWrapper (+
+                            preprocessor)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Brain-Computer Interfaces (BCI)</h3>
+            <p>Brain-Computer Interfaces (BCIs) represent another potential category of interaction channels, which
+                involve using brain signals to control computers or other devices. These signals are typically captured
+                using non-invasive sensors like electroencephalography (EEG) headsets.</p>
+            <p>While powerful, the complexity and high cost of current BCI technology make it challenging to integrate
+                into DIY and low-cost frameworks like NITH. For this reason, the NITH framework does not currently offer
+                support for BCI peripherals. However, it remains a promising area for future exploration.</p>
+
+            <h3>Developing Applications Using NITHsensors</h3>
+            <p>All NITHsensors send a standard data string each time they perform a sampling. The output of all
+                NITHsensors uses a very simple standard format. This format can be seen in the <a
+                    href="https://github.com/LIMUNIMI/NITHsensors" target="_blank">README of the GitHub repository</a>
+                under the <em>Standard Output</em> section.</p>
+
+            <p>The software library NITHdmis contains several modules capable of interpreting the input and easily
+                developing applications in C#. The communication standard is very simple, making it equally simple to
+                write input interpreters for other programming languages.</p>
 
             <div id="nithsensors" class="indented-section">
                 <h3>NITHsensors (Hardware)</h3>
@@ -394,10 +606,17 @@
                     device. It can be assembled for approximately <strong>€30 and €35</strong> using an Arduino, a
                     low-pressure air sensor (e.g., MPX 5010DP), and common tubing. The design includes a washable,
                     interchangeable mouthpiece and ensures no soldering is required.</p>
-                <img src="https://i.imgur.com/V94nLnx.png" alt="Assembled NITHbreathSensor">
+                <img src="https://raw.githubusercontent.com/LIMUNIMI/risorse-pagina-accessibilita/refs/heads/main/resources/NITHbreathSensor.webp"
+                    alt="Assembled NITHbreathSensor" width="560" height="auto">
                 <cite>A photo of a built sample of the NITHbreathPressureSensor.</cite>
-                <img src="https://i.imgur.com/gHhC922.png" alt="NITHbreathSensor schematics">
+                <img src="https://raw.githubusercontent.com/LIMUNIMI/risorse-pagina-accessibilita/refs/heads/main/resources/NITHbreathSensor_schematics.webp"
+                    alt="NITHbreathSensor schematics" width="560" height="auto">
                 <cite>Schematics for assembling the NITHbreathSensor.</cite>
+                <h5>Output Parameters</h5>
+                <ul>
+                    <li><strong>Breath Pressure:</strong> A continuous value representing the air pressure detected by
+                        the sensor.</li>
+                </ul>
 
                 <h4>NITHheadTracker</h4>
                 <p>This device measures head orientation and angular acceleration along the yaw, pitch, and roll axes.
@@ -409,10 +628,21 @@
                     on a simple headset or hairband. The integrated magnetometer ensures that the positional data does
                     not
                     drift over time.</p>
-                <img src="https://i.imgur.com/RJGp5XN.png" alt="Assembled NITHheadTracker">
+                <img src="https://raw.githubusercontent.com/LIMUNIMI/risorse-pagina-accessibilita/refs/heads/main/resources/NITHheadTracker.png"
+                    alt="Assembled NITHheadTracker" width="560" height="auto">
                 <cite>A photo of a built sample of the NITHheadTracker, mounted on a headband.</cite>
-                <img src="https://i.imgur.com/c6k2iL5.png" alt="NITHheadTracker schematics">
+                <img src="https://raw.githubusercontent.com/LIMUNIMI/risorse-pagina-accessibilita/refs/heads/main/resources/NITHheadTracker_schematics.png"
+                    alt="NITHheadTracker schematics" width="560" height="auto">
                 <cite>Schematics for assembling the NITHheadTracker.</cite>
+                <h5>Output Parameters</h5>
+                <ul>
+                    <li><strong>Head Rotation Position:</strong> The absolute rotational position of the head on the
+                        yaw, pitch, and roll axes.</li>
+                    <li><strong>Head Rotation Acceleration:</strong> The rotational acceleration of the head on the yaw,
+                        pitch, and roll axes.</li>
+                    <li><strong>Calibration Status:</strong> The calibration status for the system, gyroscope,
+                        accelerometer, and magnetometer.</li>
+                </ul>
 
                 <h4>NITHbiteSensor</h4>
                 <p>This sensor is designed to detect dental pressure using Force-Sensing Resistors (FSRs), enabling
@@ -422,6 +652,17 @@
                     small,
                     flat material like a wooden stick.
                 </p>
+                <img src="https://raw.githubusercontent.com/LIMUNIMI/risorse-pagina-accessibilita/refs/heads/main/resources/NITHbiteSensor.png"
+                    alt="Assembled NITHbiteSensor" width="560" height="auto">
+                <cite>A photo of a built sample of the NITHbiteSensor.</cite>
+                <img src="https://raw.githubusercontent.com/LIMUNIMI/risorse-pagina-accessibilita/refs/heads/main/resources/NITHbiteSensor_schematics.png"
+                    alt="NITHbiteSensor schematics" width="560" height="auto">
+                <cite>Schematics for assembling the NITHbiteSensor.</cite>
+                <h5>Output Parameters</h5>
+                <ul>
+                    <li><strong>Teeth Pressure:</strong> A continuous value representing the pressure detected by the
+                        sensor.</li>
+                </ul>
             </div>
 
             <div id="nithsoftware" class="indented-section">
@@ -445,11 +686,30 @@
                         turn
                         any standard webcam into a facial movement tracker. It can detect head rotation, eye aperture
                         (for
-                        blinks), and mouth opening.</li>
+                        blinks), and mouth opening.
+                        <h5>Output Parameters</h5>
+                        <ul>
+                            <li><strong>Head Position:</strong> The position of the head in degrees.</li>
+                            <li><strong>Eye Aperture Ratios:</strong> The aperture ratio for the left and right eyes.
+                            </li>
+                            <li><strong>Mouth Aperture Ratio:</strong> The aperture ratio for the mouth.</li>
+                        </ul>
+                    </li>
                     <li><strong>NITHbeamWrapper</strong>: A wrapper for the Beam Eye Tracker software, allowing a
                         standard
-                        webcam to be used for gaze tracking and head pose estimation within the NITH ecosystem.</li>
+                        webcam to be used for gaze tracking and head pose estimation within the NITH ecosystem.
+                        <h5>Output Parameters</h5>
+                        <ul>
+                            <li><strong>Head Rotation:</strong> The rotational data of the user's head.</li>
+                            <li><strong>Gaze Position:</strong> The user's gaze position on the screen.</li>
+                            <li><strong>Head Presence:</strong> A boolean indicating if the head is detectable.</li>
+                            <li><strong>Gaze Presence:</strong> A boolean indicating if the gaze is detectable.</li>
+                        </ul>
+                    </li>
                 </ul>
+                <img src="https://raw.githubusercontent.com/LIMUNIMI/risorse-pagina-accessibilita/refs/heads/main/resources/NITHwebcamWrapper.png"
+                    alt="NITHwebcamWrapper in action" width="560" height="auto">
+                <cite>The NITHwebcamWrapper detecting facial movements using MediaPipe.</cite>
 
                 <h4>Core Libraries</h4>
                 <p>The core libraries are written in C# using .NET 8, ensuring cross-platform compatibility.</p>
